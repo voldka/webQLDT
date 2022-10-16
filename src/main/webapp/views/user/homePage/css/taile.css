@@ -1,0 +1,37 @@
+.backgroundCover{
+    background: url("http://dkdt.fit.hcmute.edu.vn/Content/public/images/desktop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 15rem;
+}
+.padding-0{
+    padding: 0;!important;
+}
+.padding{
+    padding: 4px;!important;
+}
+.padding:hover{
+    background-color: #d3d3d4;
+}
+.section-header{
+    padding: 10px 15px;
+    background: url("http://dkdt.fit.hcmute.edu.vn/Content/public/images/asfalt-dark.png");
+    width: 100%;
+    text-align: center;
+    border: 1px solid #dddddd;
+}
+.section-table{
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #dddddd;
+}
+.section-table li{
+    list-style: none;
+    padding: 15px 5px 0px 5px;
+    border: 1px solid #dddddd;
+}
+.table-anchor{
+    text-decoration: auto;
+    color: #222;
+    font-weight: 500;
+}

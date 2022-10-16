@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="doAnWebQLDT:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>doAnWebQLDT</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="doAnWebQLDT-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="doAnWebQLDT:war exploded" />
+    </root>
+  </artifact>
+</component>
