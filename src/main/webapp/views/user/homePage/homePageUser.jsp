@@ -57,6 +57,12 @@
                                 width="24" height="24">Danh sách đề tài</a></li>
                     </ul>
                 </li>
+                <li class="nav-item dropdown padding" style="left: 10px;">
+                    <div class="input-group">
+                        <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search">
+                        <button class="btn btn-primary" id="button-search" type="button">Go!</button>
+                    </div>
+                </li>
             </ul>
             <form class="d-flex" action="#">
                 <button type="button" class="btn btn-outline-dark" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
