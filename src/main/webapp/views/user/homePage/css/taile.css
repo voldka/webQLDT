@@ -1,14 +1,16 @@
 .backgroundCover{
     background: url("http://dkdt.fit.hcmute.edu.vn/Content/public/images/desktop.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 15rem;
+    width: 972px;
+    height: 159px;
+    background-size: 100% 100%;
+    position: relative;
+    margin: 0 auto;
 }
 .padding-0{
-    padding: 0;!important;
+    padding: 0; 
 }
 .padding{
-    padding: 4px;!important;
+    padding: 4px;
 }
 .padding:hover{
     background-color: #d3d3d4;
@@ -34,4 +36,22 @@
     text-decoration: auto;
     color: #222;
     font-weight: 500;
+}
+.listProject_section-table{
+    margin-top: 4px;
+    border: 1px solid #dddddd;
+}
+.listProject_section-table--padding td{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border: 1px solid #dddddd;
+
+}
+.listProject_section-table--hover:hover {
+    background-color: #fbf8e9;
+}
+.img-header{
+    background: url(http://dkdt.fit.hcmute.edu.vn/Content/public/images/bg_body.jpg) repeat-x scroll 0px -36px;
+    height: 159px;
+    margin-bottom: 20px;
 }

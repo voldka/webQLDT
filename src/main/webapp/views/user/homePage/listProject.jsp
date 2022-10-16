@@ -1,5 +1,5 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@include file="/common/taglib.jsp" %>
+<!-- <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@include file="/common/taglib.jsp" %> -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -8,10 +8,14 @@
     <meta name="author" content=""/>
     <title>Home </title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="<c:url value="assets/favicon.ico"/>"/>
+    <!-- <link rel="icon" type="image/x-icon" href="<c:url value="assets/favicon.ico"/>"/> -->
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
     <!-- Core theme CSS (includes Bootstrap)-->
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/taile.css">
+
     <link href=${pageContext.request.contextPath}/views/user/homePage/css/styles.css rel="stylesheet" type="text/css" />
     <link href=${pageContext.request.contextPath}/views/user/homePage/css/taile.css rel="stylesheet" type="text/css" />
 
@@ -27,7 +31,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 <li class="nav-item padding">
-                    <a class="nav-link active" aria-current="page" href="#!"><img
+                    <a class="nav-link" aria-current="page" href="#!"><img
                             src="http://dkdt.fit.hcmute.edu.vn/Content/public/images/house-icon.png" width="24"
                             height="24">Trang chủ</a></li>
                 <li class="nav-item padding"><a class="nav-link" href="#!"><img
@@ -37,7 +41,7 @@
                         src="http://dkdt.fit.hcmute.edu.vn/Content/public/images/chart-icon.png" width="24" height="24">Thống
                     kê</a></li>
                 <li class="nav-item dropdown padding">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                    <a class="nav-link dropdown-toggle active" id="navbarDropdown" href="#" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">Thông tin thêm</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#!"><img
@@ -83,66 +87,47 @@
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             <div class="section-header">
                 <h4>
-                    Thông báo
+                    Danh sách đề tài
                 </h4>
             </div>
             <div class="section-table">
-                <table class="table table-striped" style="width:100%">
+                <table class="table demo footable-loaded footable listProject_section-table listProject_section-table--padding" data-page-size="5">
                     <thead>
+                    <tr>
+                        <th data="true">STT</th>
+                        <th>Loại đề tài</th>
+                    </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <a class="table-anchor" href="/Home/TinTuGiaoVu?id=9">
-                            <li class="article-area">
-                                <p>
-                                        <span class="btn btn-primary btn-sm">
-                                            30/11/2020 10:15:04
-                                        </span>
-                                    Thông báo đăng ký chuyên ngành khóa 2018
-                                </p>
-                            </li>
-                        </a>
+                    <tr class="listProject_section-table--hover">
+                        <td>1</td>
+                        <td>
+                            <a href="/Home/DanhSachDeTai?id=1"> Tiểu luận chuyên ngành | K14 (2014 - 2019) | Học kỳ 1 (2017-2018)</a>
+                        </td>
                     </tr>
-                    <tr>
-                        <a class="table-anchor" href="/Home/TinTuGiaoVu?id=9">
-                            <li class="article-area">
-                                <p>
-                                        <span class="btn btn-primary btn-sm">
-                                            30/11/2020 10:15:04
-                                        </span>
-                                    Thông báo đăng ký chuyên ngành khóa 2018
-                                </p>
-                            </li>
-                        </a>
+                    <tr class="listProject_section-table--hover">
+                        <td>2</td>
+                        <td>
+                            <a href="/Home/DanhSachDeTai?id=3"> Đề tài tốt nghiệp | K14 (2014 - 2019) | Học kỳ 2 (2017-2018)</a>
+                        </td>
                     </tr>
-                    <tr>
-                        <a class="table-anchor" href="/Home/TinTuGiaoVu?id=9">
-                            <li class="article-area">
-                                <p>
-                                        <span class="btn btn-primary btn-sm">
-                                            30/11/2020 10:15:04
-                                        </span>
-                                    Thông báo đăng ký chuyên ngành khóa 2018
-                                </p>
-                            </li>
-                        </a>
+                    <tr class="listProject_section-table--hover">
+                        <td>3</td>
+                        <td>
+                            <a href="/Home/DanhSachDeTai?id=4"> Tiểu luận chuyên ngành | K17 (2017 - 2022) | Học kỳ 1 (2020-2021)</a>
+                        </td>
                     </tr>
-                    <tr>
-                        <a class="table-anchor" href="/Home/TinTuGiaoVu?id=9">
-                            <li class="article-area">
-                                <p>
-                                        <span class="btn btn-primary btn-sm">
-                                            30/11/2020 10:15:04
-                                        </span>
-                                    Thông báo đăng ký chuyên ngành khóa 2018
-                                </p>
-                            </li>
-                        </a>
+                    <tr class="listProject_section-table--hover">
+                        <td>4</td>
+                        <td>
+                            <a href="/Home/DanhSachDeTai?id=8"> Tiểu luận chuyên ngành | K19 (2019 - 2024) | Học kỳ 1 (2022-2023)</a>
+                        </td>
                     </tr>
+
                     </tbody>
                     <tfoot>
                     <tr>
-
+                        <td colspan="5"></td>
                     </tr>
                     </tfoot>
                 </table>
