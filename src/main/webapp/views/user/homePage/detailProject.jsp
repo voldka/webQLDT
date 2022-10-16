@@ -1,5 +1,7 @@
+<!--
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@include file="/common/taglib.jsp" %>
+-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -8,12 +10,16 @@
     <meta name="author" content=""/>
     <title>Home </title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="<c:url value="assets/favicon.ico"/>"/>
+    <!-- <link rel="icon" type="image/x-icon" href="<c:url value="assets/favicon.ico"/>"/> -->
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href=${pageContext.request.contextPath}/views/user/homePage/css/styles.css rel="stylesheet" type="text/css" />
-    <link href=${pageContext.request.contextPath}/views/user/homePage/css/taile.css rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/taile.css">
+
+    <link href=${pageContext.request.contextPath}/views/user/homePage/css/styles.css rel="stylesheet" type="text/css"/>
+    <link href=${pageContext.request.contextPath}/views/user/homePage/css/taile.css rel="stylesheet" type="text/css"/>
 
 </head>
 <body>
@@ -21,33 +27,36 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light padding-0">
     <div class="container px-4 px-lg-5">
         <a class="navbar-brand padding" style="padding: 10px 22px 10px 22px" href="#!">UTE</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
                 class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 <li class="nav-item padding">
-                    <a class="nav-link active" aria-current="page" href="<c:url value="/trang-chu"/>"><img
+                    <a class="nav-link" aria-current="page" href="<c:url value="/trang-chu"/>"><img
                             src="http://dkdt.fit.hcmute.edu.vn/Content/public/images/house-icon.png" width="24"
                             height="24">Trang chủ</a></li>
                 <li class="nav-item padding"><a class="nav-link" href="#!"><img
                         src="http://dkdt.fit.hcmute.edu.vn/Content/public/images/online-icon.png" width="24"
                         height="24">Chúng tôi</a></li>
                 <li class="nav-item padding "><a class="nav-link" href="#!"><img
-                        src="http://dkdt.fit.hcmute.edu.vn/Content/public/images/chart-icon.png" width="24" height="24">Thống
-                    kê</a></li>
+                        src="http://dkdt.fit.hcmute.edu.vn/Content/public/images/chart-icon.png" width="24"
+                        height="24">Thống kê</a></li>
                 <li class="nav-item dropdown padding">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                    <a class="nav-link dropdown-toggle active" id="navbarDropdown" href="#" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">Thông tin thêm</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#!"><img
-                                src="http://dkdt.fit.hcmute.edu.vn/Content/public/images/Teacher-icon.png" width="24"
+                                src="http://dkdt.fit.hcmute.edu.vn/Content/public/images/Teacher-icon.png"
+                                width="24"
                                 height="24">Thông tin giảng viên</a></li>
                         <li>
                             <hr class="dropdown-divider"/>
                         </li>
                         <li><a class="dropdown-item" href="#!"><img
-                                src="http://dkdt.fit.hcmute.edu.vn/Content/public/images/Student-3-icon.png" width="24"
+                                src="http://dkdt.fit.hcmute.edu.vn/Content/public/images/Student-3-icon.png"
+                                width="24"
                                 height="24">Thông tin sinh viên</a></li>
                         <li>
                             <hr class="dropdown-divider"/>
@@ -83,81 +92,66 @@
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             <div class="section-header">
                 <h4>
-                    Thông báo
+                    Tên loại đề tài vừa chọn
                 </h4>
             </div>
             <div class="section-table">
-                <table class="table table-striped" style="width:100%">
-                    <thead>
-                    </thead>
+                <table class="table demo footable-loaded footable listProject_section-table listProject_section-table--padding"
+                       data-page-size="5">
                     <tbody>
-                    <tr>
-                        <a class="table-anchor" href="<c:url value="/notification"/>">
-                            <li class="article-area">
-                                <p>
-                                        <span class="btn btn-primary btn-sm">
-                                            30/11/2020 10:15:04
-                                        </span>
-                                    Thông báo đăng ký chuyên ngành khóa 2018
-                                </p>
-                            </li>
-                        </a>
+                    <tr class="listProject_section-table--hoverDarkgrey">
+                        <td>Tên đề tài</td>
+                        <td>Tìm hiểu Entity Framework và .NETXây dựng chương trình phân tích và đánh giá hoạt động
+                            đào
+                            tạo sử dụng .NET
+                        </td>
                     </tr>
-                    <tr>
-                        <a class="table-anchor" href="<c:url value="/notification"/>">
-                            <li class="article-area">
-                                <p>
-                                        <span class="btn btn-primary btn-sm">
-                                            30/11/2020 10:15:04
-                                        </span>
-                                    Thông báo đăng ký chuyên ngành khóa 2018
-                                </p>
-                            </li>
-                        </a>
+                    <tr class="listProject_section-table--hoverDarkgrey">
+                        <td>Mục tiêu</td>
+                        <td>Tìm hiểu jsp, servlet, mô hình mvc, xml, dao, service, jdbc,...</td>
                     </tr>
-                    <tr>
-                        <a class="table-anchor" href="<c:url value="/notification"/>">
-                            <li class="article-area">
-                                <p>
-                                        <span class="btn btn-primary btn-sm">
-                                            30/11/2020 10:15:04
-                                        </span>
-                                    Thông báo đăng ký chuyên ngành khóa 2018
-                                </p>
-                            </li>
-                        </a>
+                    <tr class="listProject_section-table--hoverDarkgrey">
+                        <td>SL sinh viên</td>
+                        <td>3/3</td>
                     </tr>
-                    <tr>
-                        <a class="table-anchor" href="<c:url value="/notification"/>">
-                            <li class="article-area">
-                                <p>
-                                        <span class="btn btn-primary btn-sm">
-                                            30/11/2020 10:15:04
-                                        </span>
-                                    Thông báo đăng ký chuyên ngành khóa 2018
-                                </p>
-                            </li>
-                        </a>
+                    <tr class="listProject_section-table--hoverDarkgrey">
+                        <td>Loại đề tài</td>
+                        <td>Tiểu luận chuyên ngành</td>
                     </tr>
+                    <tr class="listProject_section-table--hoverDarkgrey">
+                        <td>Trạng thái</td>
+                        <td>Được bảo vệ</td>
+                    </tr>
+                    <tr class="listProject_section-table--hoverDarkgrey" style="background-color: #f2dede;">
+                        <td>GV hướng dẫn</td>
+                        <td>Mai Anh Thơ</td>
+                    </tr>
+                    <tr class="listProject_section-table--hoverDarkgrey" style="background-color:#dff0d8">
+                        <td>Điểm đề tài</td>
+                        <td>Chưa có điểm</td>
+                    </tr>
+                    <td colspan="2" style="text-align: center;">
+                        <form action="<c:url value="/projects"/>" method="get">
+                            <button id="back" type="submit" class="btn btn-info" style="color: white; "
+                                    href="">Quay về
+                            </button>
+                        </form>
+                    </td>
                     </tbody>
-                    <tfoot>
-                    <tr>
-
-                    </tr>
-                    </tfoot>
                 </table>
             </div>
         </div>
-    </div>
     </div>
 </section>
 <!-- Footer-->
 <footer class="py-5 bg-dark">
     <div class="container">
-        <p class="m-0 text-center text-white">Khoa Công nghệ Thông tin - Đại học Sư phạm Kỹ thuật TP. Hồ Chí Minh</p>
+        <p class="m-0 text-center text-white">Khoa Công nghệ Thông tin - Đại học Sư phạm Kỹ thuật TP. Hồ Chí
+            Minh</p>
         <p class="m-0 text-center text-white">Số 1, Võ Văn Ngân, Thủ Đức, TP. Hồ Chí Minh</p>
     </div>
 </footer>
+
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->

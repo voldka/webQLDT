@@ -8,3 +8,4 @@
 $(document).ready(function () {
     $('#example').DataTable();
 });
+    // Get the modal

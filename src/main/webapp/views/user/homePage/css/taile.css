@@ -1,3 +1,4 @@
+
 .backgroundCover{
     background: url("http://dkdt.fit.hcmute.edu.vn/Content/public/images/desktop.jpg");
     width: 972px;
@@ -55,3 +56,16 @@
     height: 159px;
     margin-bottom: 20px;
 }
+.listProject_section-table--hoverDarkgrey:hover{
+    background-color: darkgrey ;
+}
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/*login css*/
