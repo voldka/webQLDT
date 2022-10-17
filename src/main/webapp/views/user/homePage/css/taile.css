@@ -1,6 +1,6 @@
 
 .backgroundCover{
-    background: url("http://dkdt.fit.hcmute.edu.vn/Content/public/images/desktop.jpg");
+    background: url("/views/user/homePage/assets/desktop.jpg");
     width: 972px;
     height: 159px;
     background-size: 100% 100%;
@@ -52,7 +52,7 @@
     background-color: #fbf8e9;
 }
 .img-header{
-    background: url(http://dkdt.fit.hcmute.edu.vn/Content/public/images/bg_body.jpg) repeat-x scroll 0px -36px;
+    background: url("/views/user/homePage/assets/bg_body.jpg") repeat-x scroll 0px -36px;
     height: 159px;
     margin-bottom: 20px;
 }
