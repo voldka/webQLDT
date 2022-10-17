@@ -1,6 +1,6 @@
 
 .backgroundCover{
-    background: url("http://dkdt.fit.hcmute.edu.vn/Content/public/images/desktop.jpg");
+    background: url('desktop.jpg');
     width: 972px;
     height: 159px;
     background-size: 100% 100%;
@@ -18,7 +18,7 @@
 }
 .section-header{
     padding: 10px 15px;
-    background: url(http://dkdt.fit.hcmute.edu.vn/Content/public/images/asfalt-dark.png);
+    background: url('http://dkdt.fit.hcmute.edu.vn/Content/public/images/asfalt-dark.png');
     width: 100%;
     text-align: center;
     border: 1px solid #dddddd;
@@ -30,7 +30,7 @@
 }
 .section-table li{
     list-style: none;
-    padding: 15px 5px 0px 5px;
+    padding: 15px 5px 0 5px;
     border: 1px solid #dddddd;
 }
 .table-anchor{
@@ -52,7 +52,7 @@
     background-color: #fbf8e9;
 }
 .img-header{
-    background: url("http://dkdt.fit.hcmute.edu.vn/Content/public/images/bg_body.jpg") repeat-x scroll 0px -36px;
+    background: url('bg_body.jpg') repeat-x scroll 0 -36px;
     height: 159px;
     margin-bottom: 20px;
 }
