@@ -32,43 +32,73 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 <li class="nav-item padding">
                     <a class="nav-link" aria-current="page" href="<c:url value="/trang-chu"/>"><img
-                            src="http://dkdt.fit.hcmute.edu.vn/Content/public/images/house-icon.png" width="24"
+                            src="${pageContext.request.contextPath}/views/user/homePage/assets/house-icon.png" width="24"
                             height="24">Trang chủ</a></li>
                 <li class="nav-item padding"><a class="nav-link" href="#!"><img
-                        src="http://dkdt.fit.hcmute.edu.vn/Content/public/images/online-icon.png" width="24"
+                        src="${pageContext.request.contextPath}/views/user/homePage/assets/online-icon.png" width="24"
                         height="24">Chúng tôi</a></li>
                 <li class="nav-item padding "><a class="nav-link" href="#!"><img
-                        src="http://dkdt.fit.hcmute.edu.vn/Content/public/images/chart-icon.png" width="24" height="24">Thống
+                        src="${pageContext.request.contextPath}/views/user/homePage/assets/chart-icon.png" width="24" height="24">Thống
                     kê</a></li>
                 <li class="nav-item dropdown padding">
                     <a class="nav-link dropdown-toggle active" id="navbarDropdown" href="#" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">Thông tin thêm</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#!"><img
-                                src="http://dkdt.fit.hcmute.edu.vn/Content/public/images/Teacher-icon.png" width="24"
+                                src="${pageContext.request.contextPath}/views/user/homePage/assets/Teacher-icon.png" width="24"
                                 height="24">Thông tin giảng viên</a></li>
                         <li>
                             <hr class="dropdown-divider"/>
                         </li>
                         <li><a class="dropdown-item" href="#!"><img
-                                src="http://dkdt.fit.hcmute.edu.vn/Content/public/images/Student-3-icon.png" width="24"
+                                src="${pageContext.request.contextPath}/views/user/homePage/assets/Student-3-icon.png" width="24"
                                 height="24">Thông tin sinh viên</a></li>
                         <li>
                             <hr class="dropdown-divider"/>
                         </li>
                         <li><a class="dropdown-item" href="<c:url value="/list-project"/>"><img
-                                src="http://dkdt.fit.hcmute.edu.vn/Content/public/images/Actions-view-calendar-list-icon.png"
+                                src="${pageContext.request.contextPath}/views/user/homePage/assets/Actions-view-calendar-list-icon.png"
                                 width="24" height="24">Danh sách đề tài</a></li>
                     </ul>
                 </li>
+                <li class="nav-item dropdown padding" style="left: 10px;">
+                    <div class="input-group">
+                        <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search">
+                        <button class="btn btn-primary" id="button-search" type="button">Go!</button>
+                    </div>
+                </li>
             </ul>
-            <form class="d-flex">
-                <button class="btn btn-outline-dark" type="submit">
+            <form class="d-flex" action="#">
+                <button type="button" class="btn btn-outline-dark" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
                     <i class="bi bi-box-arrow-in-right"></i>
                     Đăng nhập
                     <i class="bi bi-file-person"></i>
                 </button>
             </form>
+            <div id="id01" class="modal">
+                <form class="modal-content animate" action="/action_page.php" method="post" style="max-width: 50%;">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    </div>
+                    <div class="container">
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="uname" required>
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+
+                        <button type="submit">Login</button>
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"> Remember me
+                        </label>
+                    </div>
+
+                    <div class="container" style="background-color:#f1f1f1">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                        <span class="psw">Forgot <a href="#">password?</a></span>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </nav>
@@ -147,9 +177,10 @@
         <p class="m-0 text-center text-white">Số 1, Võ Văn Ngân, Thủ Đức, TP. Hồ Chí Minh</p>
     </div>
 </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
-<script src="<c:url value="js/scripts.js"/>"></script>
+<script src="${pageContext.request.contextPath}/views/user/homePage/js/scripts.js"></script>
 </body>
 </html>
