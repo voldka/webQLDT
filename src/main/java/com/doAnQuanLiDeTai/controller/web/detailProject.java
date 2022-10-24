@@ -1,5 +1,7 @@
 package com.doAnQuanLiDeTai.controller.web;
 
+import com.doAnQuanLiDeTai.model.ListTypeOfTopicModel;
+
 import java.io.*;
 
 
@@ -15,6 +17,8 @@ import javax.servlet.http.HttpSession;
 public class detailProject extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        ListTypeOfTopicModel model = new ListTypeOfTopicModel();
+
         RequestDispatcher rd = request.getRequestDispatcher("views/user/homePage/detailProject.jsp");
         rd.forward(request,response);
     }

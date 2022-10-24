@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="doAnWebQLDT-1.0-SNAPSHOT.war">
+    <root id="archive" name="new-jdbc-12-month-2018-1.0.war">
       <element id="artifact" artifact-name="doAnWebQLDT:war exploded" />
     </root>
   </artifact>

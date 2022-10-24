@@ -4,7 +4,9 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/Home/index.html" value="file://$PROJECT_DIR$/src/main/webapp/Home" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/decorators/web.jsp" value="file://$PROJECT_DIR$/src/main/webapp/decorators" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/home/home.jsp" value="file://$PROJECT_DIR$/src/main/webapp/home" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/user/homePage/ListTypeOfTopic.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/user/homePage" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/user/homePage/homePageUser.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/user/homePage" />
       </map>
     </option>
