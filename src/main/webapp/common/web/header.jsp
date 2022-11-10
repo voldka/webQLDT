@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <nav class="navbar navbar-expand-lg navbar-light bg-light padding-0">
     <div class="container px-4 px-lg-5">
         <a class="navbar-brand padding" style="padding: 10px 22px 10px 22px" href="#!">UTE</a>
@@ -9,26 +9,30 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 <li class="nav-item padding">
                     <a class="nav-link active" aria-current="page" href="<c:url value="/trang-chu"/>"><img
-                            src="${pageContext.request.contextPath}/views/user/homePage/assets/house-icon.png" width="24"
+                            src="${pageContext.request.contextPath}/views/user/homePage/assets/house-icon.png"
+                            width="24"
                             height="24">Trang chủ</a></li>
                 <li class="nav-item padding"><a class="nav-link" href="#!"><img
                         src="${pageContext.request.contextPath}/views/user/homePage/assets/online-icon.png" width="24"
                         height="24">Chúng tôi</a></li>
                 <li class="nav-item padding "><a class="nav-link" href="#!"><img
-                        src="${pageContext.request.contextPath}/views/user/homePage/assets/chart-icon.png" width="24" height="24">Thống
+                        src="${pageContext.request.contextPath}/views/user/homePage/assets/chart-icon.png" width="24"
+                        height="24">Thống
                     kê</a></li>
                 <li class="nav-item dropdown padding">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">Thông tin thêm</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#!"><img
-                                src="${pageContext.request.contextPath}/views/user/homePage/assets/Teacher-icon.png" width="24"
+                                src="${pageContext.request.contextPath}/views/user/homePage/assets/Teacher-icon.png"
+                                width="24"
                                 height="24">Thông tin giảng viên</a></li>
                         <li>
                             <hr class="dropdown-divider"/>
                         </li>
                         <li><a class="dropdown-item" href="#!"><img
-                                src="${pageContext.request.contextPath}/views/user/homePage/assets/Student-3-icon.png" width="24"
+                                src="${pageContext.request.contextPath}/views/user/homePage/assets/Student-3-icon.png"
+                                width="24"
                                 height="24">Thông tin sinh viên</a></li>
                         <li>
                             <hr class="dropdown-divider"/>
@@ -40,39 +44,106 @@
                 </li>
                 <li class="nav-item dropdown padding" style="left: 10px;">
                     <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search">
-                        <button class="btn btn-primary" id="button-search" type="button">Go!</button>
+                        <input class="form-control" type="text" placeholder="Enter search term..."
+                               aria-label="Enter search term..." aria-describedby="button-search">
+                        <button class="btn btn-primary" id="button-search" type="button" style="z-index: 0">Go!</button>
                     </div>
                 </li>
             </ul>
             <form class="d-flex" action="#">
-                <button type="button" class="btn btn-outline-dark" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
-                    <i class="bi bi-box-arrow-in-right"></i>
-                    Đăng nhập
-                    <i class="bi bi-file-person"></i>
-                </button>
+                <c:if test="${not empty USERMODEL}">
+                    <span class="nav-item header-name" style="padding: 4px 0;">
+                        <a class="nav-link" href='#' style="font-weight: 600;color: rgba(0, 0, 0, 0.7);">Wellcome, ${USERMODEL.fullname}</a>
+                    </span>
+                    <span class="nav-item header-logout" style="padding: 4px 0;">
+                        <a class="nav-link" href='<c:url value="/thoat?action=logout"/>' style="font-weight: 600;color: rgba(0, 0, 0, 0.7);">Thoát</a>
+                    </span>
+                </c:if>
+                <c:if test="${empty USERMODEL}">
+                    <button type="button" class="btn btn-outline-dark"
+                            onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
+                        <i class="bi bi-box-arrow-in-right"></i>
+                        Đăng nhập
+                        <i class="bi bi-file-person"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-dark"
+                            onclick="document.getElementById('id02').style.display='block'" style="width:auto;margin: 0px 8px;">
+                        <i class="bi bi-box-arrow-in-right"></i>
+                        Đăng kí
+                    </button>
+                </c:if>
+                <c:if test="${not empty message}">
+                    <script>
+                        alert("${message}");
+                    </script>
+                </c:if>
+
             </form>
-            <div id="id01" class="modal">
-                <form class="modal-content animate" action="/action_page.php" method="post" style="max-width: 50%;">
+
+            <div id="id01" class="modal model-login">
+                <form id="formLogin" class="modal-content animate" action="<c:url value="/dang-nhap"/>" method="post"
+                      style="max-width: 50%;">
                     <div class="imgcontainer">
-                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                              title="Close Modal">&times;</span>
                     </div>
                     <div class="container">
                         <label for="uname"><b>Username</b></label>
-                        <input type="text" placeholder="Enter Username" name="uname" required>
+                        <input type="text" placeholder="Enter Username" name="username" required>
 
                         <label for="psw"><b>Password</b></label>
-                        <input type="password" placeholder="Enter Password" name="psw" required>
+                        <input type="password" placeholder="Enter Password" name="password" required>
 
                         <button type="submit">Login</button>
                         <label>
                             <input type="checkbox" checked="checked" name="remember"> Remember me
                         </label>
+                        <input type="hidden" name="action" value="login">
                     </div>
 
                     <div class="container" style="background-color:#f1f1f1">
-                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                                class="cancelbtn">Cancel
+                        </button>
                         <span class="psw">Forgot <a href="#">password?</a></span>
+                    </div>
+                </form>
+            </div>
+            <div id="id02" class="modal model-regis">
+                <form id="formRegis" class="modal-content animate" action="<c:url value="/dang-ki"/>" method="post"
+                      style="max-width: 50%;">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementById('id02').style.display='none'" class="close"
+                              title="Close Modal">&times;</span>
+                    </div>
+                    <div class="container">
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="username" required>
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="password" required>
+
+                        <div class="p-t-10">
+                            <label class="radio-container m-r-45">Student
+                                <input type="radio" checked="checked" name="status" value="2">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="radio-container">Teacher
+                                <input type="radio" name="status" value="1">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <label for="psw"><b>fullname</b></label>
+                        <input type="text" placeholder="Enter Password" name="fullname" required>
+
+                        <button type="submit">register</button>
+                        <input type="hidden" name="action" value="regis">
+                    </div>
+
+                    <div class="container" style="background-color:#f1f1f1">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                                class="cancelbtn">Cancel
+                        </button>
                     </div>
                 </form>
             </div>

@@ -7,6 +7,9 @@
     position: relative;
     margin: 0 auto;
 }
+.decorators-container{
+    min-height: 50vh;
+}
 .padding-0{
     padding: 0; 
 }
@@ -186,3 +189,20 @@
        width: 100%;
     }
   }
+.header-name:hover{
+    background-color: #d3d3d4;
+}
+.header-logout:hover{
+    background-color: #d3d3d4;
+}
+.teacher-edit{
+    padding: 4px 0;
+    justify-content: center;
+}
+.notification-container-add{
+    background-color: antiquewhite;
+    width: fit-content;
+    float: right;
+    border: 1px solid;
+    border-color: #dddddddd;
+}

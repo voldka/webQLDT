@@ -37,7 +37,7 @@
                         </thead>
                         <tbody>
                         <c:forEach var="index" begin="0" end="${countModel-1}">
-                            <c:forEach var="item" items="${model.listResult}" begin="${index}" end="${index}">
+                            <c:forEach var="item" items="${model}" begin="${index}" end="${index}">
                                 <tr class=" listProject_section-table--hover">
                                     <td>${index+1}</td>
                                     <td>
@@ -54,33 +54,10 @@
                         </tfoot>
                     </table>
                 </form>
-                <ul class="pagination" id="pagination">
-
-                </ul>
             </div>
         </div>
     </div>
     </div>
 </section>
-
 </body>
-<script>
-    $(function () {
-        window.pagObj = $('#pagination').twbsPagination({
-            totalPages: 10,
-            visiblePages: 5,
-            startPage: 4,
-            onPageClick: function (event, page) {
-                if (currentPage != page) {
-                    $('#maxPageItem').val(limit);
-                    $('#page').val(page);
-                    $('#sortName').val('title');
-                    $('#sortBy').val('desc');
-                    $('#type').val('list');
-                    $('#formSubmit').submit();
-                }
-            }
-        });
-    });
-</script>
 </html>

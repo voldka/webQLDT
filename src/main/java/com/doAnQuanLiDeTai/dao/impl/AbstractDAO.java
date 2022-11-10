@@ -6,15 +6,16 @@ import com.doAnQuanLiDeTai.mapper.RowMapper;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 public class AbstractDAO<T> implements IGenericDAO<T> {
-
+    ResourceBundle resourceBundle = ResourceBundle.getBundle("db");
     public Connection getConnection() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/doanweb";
-            String user = "root";
-            String password = "tailx0913";
+            Class.forName(resourceBundle.getString("driverName"));
+            String url = resourceBundle.getString("url");
+            String user = resourceBundle.getString("user");
+            String password = resourceBundle.getString("password");
             return DriverManager.getConnection(url, user, password);
         } catch (ClassNotFoundException | SQLException e) {
             return null;
