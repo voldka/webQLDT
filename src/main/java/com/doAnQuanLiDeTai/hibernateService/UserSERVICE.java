@@ -55,4 +55,7 @@ public class UserSERVICE {
             session.getTransaction().commit();
         }
     }
+    public static void updateUserPassword(String username,String newPassword){
+
+    }
 }

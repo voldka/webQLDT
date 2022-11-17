@@ -19,7 +19,7 @@
 </head>
 <body>
 	<!-- header -->
-    <%@ include file="/common/web/header.jsp" %>
+    <%@ include file="/common/teacher/headerTeacher.jsp" %>
     <!-- header -->
     
     <div class="decorators-container">

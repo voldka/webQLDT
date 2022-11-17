@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = {"/trang-chu", "/dang-nhap", "/thoat", "/dang-ki"})
+@WebServlet(urlPatterns = {"/trang-chu", "/dang-nhap", "/thoat", "/dang-ki","/quen-mk"})
 public class HomeController extends HttpServlet {
 
     ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
@@ -71,6 +71,8 @@ public class HomeController extends HttpServlet {
             } else if (model != null) {
                 response.sendRedirect(request.getContextPath() + "/trang-chu?message=user_already_exist");
             }
+        }else if (action != null && action.equals("forgot")) {
+
         }
 
     }

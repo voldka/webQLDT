@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 <li class="nav-item padding">
-                    <a class="nav-link active" aria-current="page" href="<c:url value="/trang-chu"/>"><img
+                    <a class="nav-link active" aria-current="page" href="<c:url value="/teacher-home"/>"><img
                             src="${pageContext.request.contextPath}/views/user/homePage/assets/house-icon.png"
                             width="24"
                             height="24">Trang chủ</a></li>
@@ -37,7 +37,7 @@
                         <li>
                             <hr class="dropdown-divider"/>
                         </li>
-                        <li><a class="dropdown-item" href="<c:url value="/list-type-of-topic"/>"><img
+                        <li><a class="dropdown-item" href="<c:url value="/teacher-list-type-of-topic"/>"><img
                                 src="${pageContext.request.contextPath}/views/user/homePage/assets/Actions-view-calendar-list-icon.png"
                                 width="24" height="24">Danh sách đề tài</a></li>
                     </ul>
