@@ -36,16 +36,18 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach var="index" begin="0" end="${countModel-1}">
-                            <c:forEach var="item" items="${model}" begin="${index}" end="${index}">
-                                <tr class=" listProject_section-table--hover">
-                                    <td>${index+1}</td>
-                                    <td>
-                                        <a href="<c:url value="/list-projects"/>">${item.name}</a>
-                                    </td>
-                                </tr>
+                        <c:if test="${countModel>0}">
+                            <c:forEach var="index" begin="0" end="${countModel-1}">
+                                <c:forEach var="item" items="${model}" begin="${index}" end="${index}">
+                                    <tr class=" listProject_section-table--hover">
+                                        <td>${index+1}</td>
+                                        <td>
+                                            <a href="<c:url value="/list-projects"/>">${item.name}</a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
                             </c:forEach>
-                        </c:forEach>
+                        </c:if>
                         </tbody>
                         <tfoot>
                         <tr>

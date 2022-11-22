@@ -19,7 +19,7 @@
 <!-- Section-->
 <section class="py-5" style="padding-top: 0px!important;">
     <div class="container px-4 px-lg-5 mt-5">
-        <div class="notification-container-add"><a class="nav-link" href="<c:url value="/teacher-add-notificate"/>">
+        <div class="notification-container-add"><a class="nav-link" href="<c:url value="/teacher-edit-TypeOfTopic"/>">
             <img src="${pageContext.request.contextPath}/views/user/homePage/assets/add.png" width="24" height="24"
                  alt="add anotificate">
         </a></div>
@@ -40,32 +40,38 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach var="index" begin="0" end="${countModel-1}">
-                            <c:forEach var="item" items="${model}" begin="${index}" end="${index}">
-                                <tr class=" listProject_section-table--hover">
-                                    <td>${index+1}</td>
-                                    <td>
-                                        <a href="<c:url value="/list-projects"/>">${item.name}</a>
-                                    </td>
-                                    <td style="width: 8%">
-                                        <form action="<c:url value="/teacher-home"/>" method="post" style="margin: 4px;">
-                                            <input type="hidden" name="action-notificate" value="" class="edit-input">
-                                            <input type="hidden" name="id" value="${item.id}" class="edit-input-id">
-                                            <button class="btn btn-primary btn-sm edit-button" type="submit">
-                                                <i class="fa-solid fa-pen-to-square"></i>
-                                            </button>
-                                        </form>
-                                        <form action="<c:url value="/teacher-home"/>" method="post" style="margin: 4px;">
-                                            <input type="hidden" name="action-notificate" value="deleteNotificate" class="delete-input}">
-                                            <input type="hidden" name="id" value="${item.id}" class="delete-input-id">
-                                            <button class="btn btn-primary btn-sm" id="delete-button" type="submit">
-                                                <i class="fa-solid fa-trash"></i>
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
+                        <c:if test="${countModel>0}">
+                            <c:forEach var="index" begin="0" end="${countModel-1}">
+                                <c:forEach var="item" items="${model}" begin="${index}" end="${index}">
+                                    <tr class=" listProject_section-table--hover">
+                                        <td style="width: 10%">${index+1}</td>
+                                        <td>
+                                            <a href="<c:url value="/teacher-list-projects?id=${item.id}"/>">${item.name}</a>
+                                        </td>
+                                        <td style="width: 8%;">
+                                            <form action="<c:url value="/teacher-home"/>" method="post"
+                                                  style="margin: 4px;">
+                                                <input type="hidden" name="action" value="" class="edit-input">
+                                                <input type="hidden" name="id" value="${item.id}" class="edit-input-id">
+                                                <button class="btn btn-primary btn-sm edit-button" type="submit">
+                                                    <i class="fa-solid fa-pen-to-square"></i>
+                                                </button>
+                                            </form>
+                                            <form action="<c:url value="/teacher-list-type-of-topic"/>" method="post"
+                                                  style="margin: 4px;">
+                                                <input type="hidden" name="action" value="deleteTypeOfTopic"
+                                                       class="delete-input}">
+                                                <input type="hidden" name="id" value="${item.id}"
+                                                       class="delete-input-id">
+                                                <button class="btn btn-primary btn-sm" id="delete-button" type="submit">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
                             </c:forEach>
-                        </c:forEach>
+                        </c:if>
                         </tbody>
                         <tfoot>
                         <tr>

@@ -52,7 +52,7 @@
                                     <form action="<c:url value="/teacher-home"/>" method="post" style="margin: 4px;">
                                         <input type="hidden" name="action-notificate" value="deleteNotificate" class="delete-input}">
                                         <input type="hidden" name="id" value="${item.id}" class="delete-input-id">
-                                        <button class="btn btn-primary btn-sm" id="delete-button" type="submit">
+                                        <button class="btn btn-primary btn-sm" type="submit">
                                             <i class="fa-solid fa-trash"></i>
                                         </button>
                                     </form>

@@ -13,7 +13,7 @@ public class TypeOfTopic implements Serializable {
     private long id;
     private String name;
 
-    @OneToMany(mappedBy = "type",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "type",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<Topic> topics;
     private Timestamp createddate;
     private Timestamp modifieddate;

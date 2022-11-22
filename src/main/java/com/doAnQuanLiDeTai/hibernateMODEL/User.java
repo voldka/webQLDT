@@ -25,10 +25,22 @@ public class User implements Serializable {
     private List<Comment> comment = new ArrayList<>();
 
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "regis_topicid")
+    private Topic topicRegis;
+
     private Timestamp createddate;
     private Timestamp modifieddate;
     private String createdby;
     private String modifiedby;
+    
+    public Topic getTopicRegis() {
+        return topicRegis;
+    }
+
+    public void setTopicRegis(Topic topicRegis) {
+        this.topicRegis = topicRegis;
+    }
 
     public long getId() {
         return id;

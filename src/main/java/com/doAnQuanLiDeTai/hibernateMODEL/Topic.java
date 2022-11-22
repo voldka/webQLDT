@@ -16,18 +16,28 @@ public class Topic implements Serializable {
     private int number;
     private String status;
 
+    private int rate;
+
     @ManyToOne (fetch = FetchType.EAGER)
     @JoinColumn(name = "typeid")
     private TypeOfTopic type;
 
-    @ManyToOne (fetch = FetchType.EAGER)
-    @JoinColumn(name = "userid")
-    private User user;
+    @ManyToOne
+    @JoinColumn(name = "create_userid")
+    private User usercreate;
 
     private Timestamp createddate;
     private Timestamp modifieddate;
     private String createdby;
     private String modifiedby;
+
+    public User getUsercreate() {
+        return usercreate;
+    }
+
+    public void setUsercreate(User usercreate) {
+        this.usercreate = usercreate;
+    }
 
     public long getId() {
         return id;
@@ -77,13 +87,6 @@ public class Topic implements Serializable {
         this.type = type;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     public Timestamp getCreateddate() {
         return createddate;
@@ -115,5 +118,13 @@ public class Topic implements Serializable {
 
     public void setModifiedby(String modifiedby) {
         this.modifiedby = modifiedby;
+    }
+
+    public int getRate() {
+        return rate;
+    }
+
+    public void setRate(int rate) {
+        this.rate = rate;
     }
 }

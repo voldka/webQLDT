@@ -2,6 +2,7 @@ package com.doAnQuanLiDeTai.controller.admin.teacher;
 
 import com.doAnQuanLiDeTai.hibernateMODEL.Notification;
 import com.doAnQuanLiDeTai.hibernateMODEL.TypeOfTopic;
+import com.doAnQuanLiDeTai.hibernateMODEL.User;
 import com.doAnQuanLiDeTai.hibernateService.NotificationHibernateService;
 import com.doAnQuanLiDeTai.hibernateService.TopicSERVICE;
 import com.doAnQuanLiDeTai.model.ListTypeOfTopicModel;
@@ -30,7 +31,6 @@ public class ListTypeOfTopicTeacherController extends HttpServlet {
     private IListTypeOfTopicService listTypeOfTopicService;
 
     ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
-
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String action = request.getParameter("action");
         if (action != null && action.equals("logout")) {
@@ -51,6 +51,21 @@ public class ListTypeOfTopicTeacherController extends HttpServlet {
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
+        User model = (User) SessionUtil.getInstance().getValue(request, "USERMODEL");
+        String action = request.getParameter("action");
+        if (action != null && action.equals("addTypeOfTopic")) {
+            String name = request.getParameter("name");
+            TopicSERVICE.addNewTypeOfTopic(name,model);
+            response.sendRedirect(request.getContextPath() + "/teacher-list-type-of-topic");
+        }
+        else{
+            if (action!=null && action.equals("deleteTypeOfTopic")){
+                long id = Long.parseLong(request.getParameter("id"));
+                TopicSERVICE.deleteTypeOfTopic(id);
+                response.sendRedirect(request.getContextPath() + "/teacher-list-type-of-topic");
+            }else {
+                response.sendRedirect(request.getContextPath() + "/teacher-list-type-of-topic?message=can not delete");
+            }
+        }
     }
 }
