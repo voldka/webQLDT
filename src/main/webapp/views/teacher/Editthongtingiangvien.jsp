@@ -25,8 +25,8 @@
                     Thông tin của giảng viên
                 </h4>
             </div>
-            <form action="<c:url value="teacher-thongtingv"/> " method="post">
                 <div class="section-table">
+                    <form action="<c:url value="teacher-thongtingv"/> " method="post">
                     <table class="table demo footable-loaded footable listProject_section-table listProject_section-table--padding"
                            data-page-size="5">
                         <thead>
@@ -72,11 +72,12 @@
 
                         </tfoot>
                     </table>
-                    <br>
-                    <input type="text" hidden="" name="action" value="editProUser">
-                    <button type="submit">submit</button>
+                    <div style="text-align: center;">
+                        <input type="text" hidden="" name="action" value="editProUser">
+                        <button type="submit">submit</button>
+                    </div>
+                    </form>
                 </div>
-            </form>
 
         </div>
     </div>
