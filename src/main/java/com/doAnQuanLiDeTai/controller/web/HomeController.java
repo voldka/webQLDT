@@ -9,6 +9,7 @@ import com.doAnQuanLiDeTai.utils.FormUtil;
 import com.doAnQuanLiDeTai.utils.SessionUtil;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -60,8 +61,17 @@ public class HomeController extends HttpServlet {
                 response.sendRedirect(request.getContextPath() + "/trang-chu?message=username_password_invalid");
             }
         } else if (action != null && action.equals("regis")) {
-            User model = FormUtil.toModel(User.class, request);
+
+            String fullname = request.getParameter("fullname");
+            byte[] bytes = fullname.getBytes(StandardCharsets.ISO_8859_1);
+            fullname = new String(bytes, StandardCharsets.UTF_8);
+
+            User model = new User();
+            model.setUsername(request.getParameter("username"));
+            model.setPassword(request.getParameter("password"));
             model.setStatus(Long.parseLong(request.getParameter("status")));
+            model.setFullname(fullname);
+
             User model2 = model;
             model2 = UserSERVICE.findUser(model.getUsername(), model.getPassword());
             if (model2 == null) {

@@ -4,10 +4,12 @@
 <html>
 <head>
     <title><dec:title default="Trang chủ" /></title>
-
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
+    <meta charset="UTF-8">
+
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/views/user/homePage/assets/favicon.ico"/>
     <!-- Bootstrap icons-->
@@ -15,6 +17,7 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href=${pageContext.request.contextPath}/views/user/homePage/css/styles.css rel="stylesheet" type="text/css"/>
     <link href=${pageContext.request.contextPath}/views/user/homePage/css/taile.css rel="stylesheet" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/3ca62ec5db.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -30,6 +33,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <!-- Bootstrap core JS-->
+    <!-- Core theme JS-->
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->

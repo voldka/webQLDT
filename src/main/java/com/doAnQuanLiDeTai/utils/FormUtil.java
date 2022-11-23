@@ -1,6 +1,7 @@
 package com.doAnQuanLiDeTai.utils;
 
 import java.lang.reflect.InvocationTargetException;
+import java.nio.charset.StandardCharsets;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -18,5 +19,10 @@ public class FormUtil {
             System.out.print(e.getMessage());
         }
         return object;
+    }
+    public static String parseStringUTF8(String obj){
+        byte[] bytes = obj.getBytes(StandardCharsets.ISO_8859_1);
+        obj = new String(bytes, StandardCharsets.UTF_8);
+        return obj;
     }
 }

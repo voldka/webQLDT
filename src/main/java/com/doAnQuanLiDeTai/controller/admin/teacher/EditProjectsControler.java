@@ -2,6 +2,7 @@ package com.doAnQuanLiDeTai.controller.admin.teacher;
 
 import com.doAnQuanLiDeTai.hibernateMODEL.User;
 import com.doAnQuanLiDeTai.hibernateService.TopicSERVICE;
+import com.doAnQuanLiDeTai.utils.FormUtil;
 import com.doAnQuanLiDeTai.utils.SessionUtil;
 
 import javax.servlet.RequestDispatcher;
@@ -21,11 +22,12 @@ public class EditProjectsControler extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/trang-chu");
         } else {
             String typeId = request.getParameter("typeId");
-            request.setAttribute("typeId",typeId);
+            request.setAttribute("typeId", typeId);
             RequestDispatcher rd = request.getRequestDispatcher("views/teacher/EditProjects.jsp");
             rd.forward(request, response);
         }
     }
+
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User model = (User) SessionUtil.getInstance().getValue(request, "USERMODEL");
         String action = request.getParameter("action");
@@ -35,12 +37,12 @@ public class EditProjectsControler extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/teacher-list-projects");
         } else {
             if (action != null && action.equals("addproject")) {
-                String name= request.getParameter("name");
-                String target= request.getParameter("target");
-                String status= request.getParameter("status");
-                long typeId= Long.parseLong(request.getParameter("typeId"));
-                TopicSERVICE.addTopic(typeId,name,target,0,status,0,model);
-                response.sendRedirect(request.getContextPath()+"/teacher-list-projects?id="+typeId);
+                String name = FormUtil.parseStringUTF8(request.getParameter("name"));
+                String target = FormUtil.parseStringUTF8(request.getParameter("target"));
+                String status = FormUtil.parseStringUTF8(request.getParameter("status"));
+                long typeId = Long.parseLong(request.getParameter("typeId"));
+                TopicSERVICE.addTopic(typeId, name, target, 0, status, 0, model);
+                response.sendRedirect(request.getContextPath() + "/teacher-list-projects?id=" + typeId);
             }
         }
     }

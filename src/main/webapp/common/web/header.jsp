@@ -23,7 +23,7 @@
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">Thông tin thêm</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!"><img
+                        <li><a class="dropdown-item" href="#"><img
                                 src="${pageContext.request.contextPath}/views/user/homePage/assets/Teacher-icon.png"
                                 width="24"
                                 height="24">Thông tin giảng viên</a></li>
@@ -53,10 +53,12 @@
             <form class="d-flex" action="#">
                 <c:if test="${not empty USERMODEL}">
                     <span class="nav-item header-name" style="padding: 4px 0;">
-                        <a class="nav-link" href='#' style="font-weight: 600;color: rgba(0, 0, 0, 0.7);">Wellcome, ${USERMODEL.fullname}</a>
+                        <a class="nav-link" href='#'
+                           style="font-weight: 600;color: rgba(0, 0, 0, 0.7);">Wellcome, ${USERMODEL.fullname}</a>
                     </span>
                     <span class="nav-item header-logout" style="padding: 4px 0;">
-                        <a class="nav-link" href='<c:url value="/thoat?action=logout"/>' style="font-weight: 600;color: rgba(0, 0, 0, 0.7);">Thoát</a>
+                        <a class="nav-link" href='<c:url value="/thoat?action=logout"/>'
+                           style="font-weight: 600;color: rgba(0, 0, 0, 0.7);">Thoát</a>
                     </span>
                 </c:if>
                 <c:if test="${empty USERMODEL}">
@@ -67,7 +69,8 @@
                         <i class="bi bi-file-person"></i>
                     </button>
                     <button type="button" class="btn btn-outline-dark"
-                            onclick="document.getElementById('id02').style.display='block'" style="width:auto;margin: 0px 8px;">
+                            onclick="document.getElementById('id02').style.display='block'"
+                            style="width:auto;margin: 0px 8px;">
                         <i class="bi bi-box-arrow-in-right"></i>
                         Đăng kí
                     </button>
@@ -82,6 +85,7 @@
 
             <div id="id01" class="modal model-login">
                 <form id="formLogin" class="modal-content animate" action="<c:url value="/dang-nhap"/>" method="post"
+                      accept-charset="UTF-8"
                       style="max-width: 50%;">
                     <div class="imgcontainer">
                         <span onclick="document.getElementById('id01').style.display='none'" class="close"
@@ -105,12 +109,14 @@
                         <button type="button" onclick="document.getElementById('id01').style.display='none'"
                                 class="cancelbtn">Cancel
                         </button>
-                        <span onclick="document.getElementById('id03').style.display='block';document.getElementById('id01').style.display='none'" class="psw">Forgot <a href="#">password?</a></span>
+                        <span onclick="document.getElementById('id03').style.display='block';document.getElementById('id01').style.display='none'"
+                              class="psw">Forgot <a href="#">password?</a></span>
                     </div>
                 </form>
             </div>
             <div id="id02" class="modal model-regis">
                 <form id="formRegis" class="modal-content animate" action="<c:url value="/dang-ki"/>" method="post"
+                      accept-charset="UTF-8"
                       style="max-width: 50%;">
                     <div class="imgcontainer">
                         <span onclick="document.getElementById('id02').style.display='none'" class="close"
@@ -149,6 +155,7 @@
             </div>
             <div id="id03" class="modal model-regis">
                 <form id="formForgot" class="modal-content animate" action="<c:url value="/quen-mk"/>" method="post"
+                      accept-charset="UTF-8"
                       style="max-width: 50%;">
                     <div class="imgcontainer">
                         <span onclick="document.getElementById('id03').style.display='none'" class="close"
@@ -159,10 +166,12 @@
                         <input type="text" placeholder="Enter Username" name="username" required>
 
                         <label for="psw"><b>New password</b></label>
-                        <input id="password-tai" class="password-tai" type="password" placeholder="Enter Password" name="password" required>
+                        <input id="password-tai" class="password-tai" type="password" placeholder="Enter Password"
+                               name="password" required>
 
                         <label for="psw"><b>Confirm password</b></label>
-                        <input id="confirm_password-tai" class="confirm_password-tai" type="password" placeholder="Confirm Password" name="password" required>
+                        <input id="confirm_password-tai" class="confirm_password-tai" type="password"
+                               placeholder="Confirm Password" name="password" required>
 
                         <button type="submit">submit</button>
                         <input type="hidden" name="action" value="forgot">

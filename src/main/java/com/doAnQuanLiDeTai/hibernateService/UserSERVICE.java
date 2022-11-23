@@ -55,7 +55,19 @@ public class UserSERVICE {
             session.getTransaction().commit();
         }
     }
-    public static void updateUserPassword(String username,String newPassword){
-
+    public static void addOrEditProfile(User user,String fullname,String code, String birthday, String major,String bgeducate,String locate,String numberphone){
+        SessionFactory factory = HibernateUtil.getSessionFactory();
+        try(Session session = factory.openSession()){
+            session.getTransaction().begin();
+            user.setFullname(fullname);
+            user.setCode(code);
+            user.setBirthday(birthday);
+            user.setMajor(major);
+            user.setBgeducate(bgeducate);
+            user.setLocate(locate);
+            user.setNumberphone(numberphone);
+            session.saveOrUpdate(user);
+            session.getTransaction().commit();
+        }
     }
 }

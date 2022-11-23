@@ -3,6 +3,7 @@ package com.doAnQuanLiDeTai.controller.admin.teacher;
 import com.doAnQuanLiDeTai.hibernateMODEL.Notification;
 import com.doAnQuanLiDeTai.hibernateMODEL.User;
 import com.doAnQuanLiDeTai.hibernateService.NotificationHibernateService;
+import com.doAnQuanLiDeTai.utils.FormUtil;
 import com.doAnQuanLiDeTai.utils.SessionUtil;
 
 import javax.servlet.RequestDispatcher;
@@ -15,9 +16,10 @@ import java.io.IOException;
 import java.util.List;
 import java.util.ResourceBundle;
 
-@WebServlet(name="teacher-add-notificate" , urlPatterns = "/teacher-add-notificate")
+@WebServlet(name = "teacher-add-notificate", urlPatterns = "/teacher-add-notificate")
 public class AddNotificationControler extends HttpServlet {
     ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
+
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String action = request.getParameter("action");
         if (action != null && action.equals("logout")) {
@@ -33,17 +35,16 @@ public class AddNotificationControler extends HttpServlet {
         String action = request.getParameter("action");
         if (action != null && action.equals("addNotification")) {
             User model = (User) SessionUtil.getInstance().getValue(request, "USERMODEL");
-            String title = request.getParameter("title");
-            String content = request.getParameter("content");
+            String title = FormUtil.parseStringUTF8(request.getParameter("title"));
+            String content = FormUtil.parseStringUTF8(request.getParameter("content"));
             NotificationHibernateService.addNewNotificate(model, title, content);
             response.sendRedirect(request.getContextPath() + "/teacher-home");
-        }
-        else{
+        } else {
 //            if (action!=null && action.equals("deleteNotificate")){
 //                long id = Long.parseLong(request.getParameter("id"));
 //                NotificationHibernateService.deleteNotificat(id);
 //            }else {
-                response.sendRedirect(request.getContextPath() + "/teacher-home");
+            response.sendRedirect(request.getContextPath() + "/teacher-home");
 //            }
         }
     }

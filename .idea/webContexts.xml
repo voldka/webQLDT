@@ -9,6 +9,7 @@
         <entry key="file://$PROJECT_DIR$/src/main/webapp/home/home.jsp" value="file://$PROJECT_DIR$/src/main/webapp/home" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/teacher/AddNotification.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/teacher" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/teacher/HomePageTeacher.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/teacher" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/teacher/thongtingiangvien.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/teacher" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/user/homePage/ListTypeOfTopic.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/user/homePage" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/views/user/homePage/homePageUser.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/user/homePage" />
       </map>

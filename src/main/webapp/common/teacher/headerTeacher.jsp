@@ -23,7 +23,7 @@
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">Thông tin thêm</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!"><img
+                        <li><a class="dropdown-item" href="<c:url value="/teacher-thongtingv"/>"><img
                                 src="${pageContext.request.contextPath}/views/user/homePage/assets/Teacher-icon.png"
                                 width="24"
                                 height="24">Thông tin giảng viên</a></li>

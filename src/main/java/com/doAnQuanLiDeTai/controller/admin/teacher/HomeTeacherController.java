@@ -52,17 +52,16 @@ public class HomeTeacherController extends HttpServlet {
         User model = (User) SessionUtil.getInstance().getValue(request, "USERMODEL");
         String action = request.getParameter("action-notificate");
         if (action != null && action.equals("addNotification")) {
-            String title = request.getParameter("title");
-            String content = request.getParameter("content");
+            String title = FormUtil.parseStringUTF8(request.getParameter("title"));
+            String content = FormUtil.parseStringUTF8(request.getParameter("content"));
             NotificationHibernateService.addNewNotificate(model, title, content);
             response.sendRedirect(request.getContextPath() + "/teacher-home");
-        }
-        else{
-            if (action!=null && action.equals("deleteNotificate")){
+        } else {
+            if (action != null && action.equals("deleteNotificate")) {
                 long id = Long.parseLong(request.getParameter("id"));
                 NotificationHibernateService.deleteNotificat(id);
                 response.sendRedirect(request.getContextPath() + "/teacher-home");
-            }else {
+            } else {
                 response.sendRedirect(request.getContextPath() + "/teacher-home");
             }
         }

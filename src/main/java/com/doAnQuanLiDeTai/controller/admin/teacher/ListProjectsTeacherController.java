@@ -32,16 +32,16 @@ public class ListProjectsTeacherController extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/trang-chu");
         } else {
             long typeId = Long.parseLong(request.getParameter("id"));
-            List<Topic> model =TopicSERVICE.findAllTopicOfType(typeId);
-            request.setAttribute("model",model);
-            request.setAttribute("typeId",typeId);
+            List<Topic> model = TopicSERVICE.findAllTopicOfType(typeId);
+            request.setAttribute("model", model);
+            request.setAttribute("typeId", typeId);
             int countModel;
-            if(model !=null) {
+            if (model != null) {
                 countModel = model.size();
-            }else {
-                countModel=0;
+            } else {
+                countModel = 0;
             }
-            request.setAttribute("countModel",countModel);
+            request.setAttribute("countModel", countModel);
             RequestDispatcher rd = request.getRequestDispatcher("views/teacher/ListProjectTeachers.jsp");
             rd.forward(request, response);
         }
@@ -54,16 +54,16 @@ public class ListProjectsTeacherController extends HttpServlet {
         if (action != null && action.equals("delelteTopic")) {
             long id = Long.parseLong(request.getParameter("id"));
             TopicSERVICE.deleteTopic(id);
-            response.sendRedirect(request.getContextPath() + "/teacher-list-projects?id="+typeId);
+            response.sendRedirect(request.getContextPath() + "/teacher-list-projects?id=" + typeId);
         } else {
             if (action != null && action.equals("addTopic")) {
-                String name = request.getParameter("name");
-                String target = request.getParameter("target");
+                String name = FormUtil.parseStringUTF8(request.getParameter("name"));
+                String target = FormUtil.parseStringUTF8(request.getParameter("target"));
                 int number = Integer.parseInt(request.getParameter("number"));
-                String status = request.getParameter("status");
+                String status = FormUtil.parseStringUTF8(request.getParameter("status"));
                 int rate = Integer.parseInt(request.getParameter("rate"));
-                TopicSERVICE.addTopic(typeId,name,target,number,status,rate,model);
-                response.sendRedirect(request.getContextPath()+"/teacher-list-projects?id="+typeId);
+                TopicSERVICE.addTopic(typeId, name, target, number, status, rate, model);
+                response.sendRedirect(request.getContextPath() + "/teacher-list-projects?id=" + typeId);
             }
         }
     }

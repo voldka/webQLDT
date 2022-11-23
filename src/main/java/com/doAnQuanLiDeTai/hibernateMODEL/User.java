@@ -15,6 +15,17 @@ public class User implements Serializable {
     private String username;
     private String password;
     private String fullname;
+
+    private String code;
+    private String birthday;
+
+    private String major;
+
+    private String bgeducate;
+
+    private String locate;
+
+    private String numberphone;
     private long status;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -33,7 +44,55 @@ public class User implements Serializable {
     private Timestamp modifieddate;
     private String createdby;
     private String modifiedby;
-    
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getMajor() {
+        return major;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
+
+    public String getBgeducate() {
+        return bgeducate;
+    }
+
+    public void setBgeducate(String bgeducate) {
+        this.bgeducate = bgeducate;
+    }
+
+    public String getLocate() {
+        return locate;
+    }
+
+    public void setLocate(String locate) {
+        this.locate = locate;
+    }
+
+    public String getNumberphone() {
+        return numberphone;
+    }
+
+    public void setNumberphone(String numberphone) {
+        this.numberphone = numberphone;
+    }
+
     public Topic getTopicRegis() {
         return topicRegis;
     }
