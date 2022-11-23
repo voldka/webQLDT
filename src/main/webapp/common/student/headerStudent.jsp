@@ -29,7 +29,7 @@
                         <li>
                             <hr class="dropdown-divider"/>
                         </li>
-                        <li><a class="dropdown-item" href="#!"><img
+                        <li><a class="dropdown-item" href="<c:url value="/student-thongtinsv"/>"><img
                                 src="${pageContext.request.contextPath}/views/user/homePage/assets/Student-3-icon.png"
                                 width="24"
                                 height="24">Thông tin sinh viên</a></li>
