@@ -8,14 +8,18 @@ import com.doAnQuanLiDeTai.utils.SessionUtil;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import java.io.IOException;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.io.InputStream;
+import java.nio.file.Paths;
+import java.util.*;
 
+@MultipartConfig
 @WebServlet(name = "teacher-add-notificate", urlPatterns = "/teacher-add-notificate")
 public class AddNotificationControler extends HttpServlet {
     ResourceBundle resourceBundle = ResourceBundle.getBundle("message");

@@ -26,7 +26,7 @@
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             <div class="section-header">
                 <h4>
-                    Danh sách đề tài
+                    Danh sách loại đề tài
                 </h4>
             </div>
             <div class="section-table">

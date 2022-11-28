@@ -51,6 +51,7 @@ public class TopicSERVICE {
             session.getTransaction().commit();
         }
     }
+
     public static void addNewTypeOfTopic(String name,User user){
         SessionFactory factory = HibernateUtil.getSessionFactory();
         try(Session session= factory.openSession()) {
@@ -64,8 +65,30 @@ public class TopicSERVICE {
             session.getTransaction().commit();
         }
     }
-    public static void findTypeOfTopicById(long id){
-
+    public static void editTypeOfTopic(String name,User user,long id){
+        SessionFactory factory =HibernateUtil.getSessionFactory();
+        try(Session session = factory.openSession()){
+            session.getTransaction().begin();
+            TypeOfTopic typeOfTopic = new TypeOfTopic();
+            typeOfTopic.setId(id);
+            typeOfTopic.setName(name);
+            session.update(typeOfTopic);
+            session.getTransaction().commit();
+        }
+    }
+    public static TypeOfTopic findTypeOfTopicById(long id){
+        TypeOfTopic result = new TypeOfTopic();
+        SessionFactory factory = HibernateUtil.getSessionFactory();
+        try (Session session = factory.openSession()) {
+            Query q = session.createQuery("from TypeOfTopic A " + "where A.id=:loc");
+            q.setParameter("loc",id);
+            result = (TypeOfTopic) q.getSingleResult();
+            return result;
+        } finally {
+            if (result==null) {
+                return null;
+            }
+        }
     }
     public static int getTotalType() {
         int result = 0;

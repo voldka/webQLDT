@@ -19,7 +19,7 @@ public class Notification implements Serializable {
     @JoinColumn(name = "userid")
     private User user;
 
-    @OneToMany(mappedBy = "notification", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "notification", cascade = CascadeType.ALL)
     private List<Comment> Comment =  new ArrayList<>();
 
     private Timestamp createddate;

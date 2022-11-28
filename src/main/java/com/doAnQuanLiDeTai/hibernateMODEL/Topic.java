@@ -3,6 +3,8 @@ package com.doAnQuanLiDeTai.hibernateMODEL;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "topic")
@@ -25,6 +27,9 @@ public class Topic implements Serializable {
     @ManyToOne
     @JoinColumn(name = "create_userid")
     private User usercreate;
+
+    @OneToMany(mappedBy = "topicRegis",fetch = FetchType.EAGER, cascade= CascadeType.ALL)
+    private Set<User> users;
 
     private Timestamp createddate;
     private Timestamp modifieddate;

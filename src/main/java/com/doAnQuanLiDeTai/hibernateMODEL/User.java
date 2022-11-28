@@ -32,7 +32,7 @@ public class User implements Serializable {
     @JoinColumn(name = "roleid")
     private Role role;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Comment> comment = new ArrayList<>();
 
 

@@ -1,5 +1,6 @@
 package com.doAnQuanLiDeTai.controller.admin.teacher;
 
+import com.doAnQuanLiDeTai.hibernateMODEL.TypeOfTopic;
 import com.doAnQuanLiDeTai.hibernateMODEL.User;
 import com.doAnQuanLiDeTai.hibernateService.TopicSERVICE;
 import com.doAnQuanLiDeTai.utils.FormUtil;
@@ -22,8 +23,16 @@ public class EditTypeOfTopicControler extends HttpServlet {
             SessionUtil.getInstance().removeValue(request, "USERMODEL");
             response.sendRedirect(request.getContextPath() + "/trang-chu");
         } else {
-            RequestDispatcher rd = request.getRequestDispatcher("views/teacher/EditTypeOfTopic.jsp");
-            rd.forward(request, response);
+            if(action != null && action.equals("add")){
+                RequestDispatcher rd = request.getRequestDispatcher("views/teacher/EditTypeOfTopic.jsp");
+                rd.forward(request, response);
+            }else if( action!=null && action.equals("edit")){
+                Long id = Long.valueOf(request.getParameter("id"));
+                TypeOfTopic model = TopicSERVICE.findTypeOfTopicById(id);
+                request.setAttribute("model",model);
+                RequestDispatcher rd = request.getRequestDispatcher("views/teacher/EditTypeOfTopic.jsp");
+                rd.forward(request, response);
+            }
         }
     }
 

@@ -13,7 +13,7 @@ public class Role implements Serializable {
     private String name;
     private String code;
 
-    @OneToMany(mappedBy = "role",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "role",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<User> users;
 
     public long getId() {

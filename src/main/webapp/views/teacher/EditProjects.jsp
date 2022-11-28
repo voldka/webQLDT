@@ -10,46 +10,65 @@
 <!-- Navigation-->
 <!-- Section-->
 <section class="py-5" style="padding-top: 0px!important;">
-    <form id="formLogin" class="modal-content animate" action="<c:url value="/teacher-edit-projects?typeId=${typeId}"/>" method="post">
-        <div class="container px-4 px-lg-5 mt-5">
-            <div class="row g-3 align-items-center teacher-edit">
-                <div class="form-group" style="text-align: center;">
-                    <label class="col-sm-3 control-label no-padding-right">name topic</label>
-                    <div class="col-sm-9" style="margin: auto;">
-                        <input  required="" type="text" class="form-control"  name="name" value="${name}"/>
-                    </div>
-                </div>
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="section-header">
+                <h4>
+                    <c:if test="${not empty model.id}">
+                        chỉnh sửa topic
+                    </c:if>
+                    <c:if test="${empty model.id}">
+                        thêm topic
+                    </c:if>
+                </h4>
             </div>
-            <div class="row g-3 align-items-center teacher-edit">
-                <div class="form-group" style="text-align: center;">
-                    <label class="col-sm-3 control-label no-padding-right">target</label>
-                    <div class="col-sm-9" style="margin: auto;">
-                        <input  required="" type="text" class="form-control" name="target" value="${target}"/>
+            <div class="section-table">
+                <form id="formLogin" class="modal-content animate"
+                      action="<c:url value="/teacher-edit-projects?typeId=${typeId}"/>"
+                      method="post">
+                    <table class="table demo footable-loaded footable listProject_section-table listProject_section-table--padding"
+                           data-page-size="5">
+                        <thead>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>name topic</td>
+                            <td>
+                                <input required="" type="text" class="form-control" name="name" value="${name}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>status</td>
+                            <td>
+                                <input required="" type="text" class="form-control" name="status" value="${status}"/>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>target</td>
+                            <td>
+                                <input required="" type="text" class="form-control" name="target" value="${target}"/>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+
+                        </tfoot>
+                    </table>
+                    <div class="row g-3 align-items-center teacher-edit">
+                        <c:if test="${not empty model.id}">
+                            <input type="text" hidden="" name="action" value="editTypeOfTopic">
+                            <button type="submit" style="width: fit-content;">chỉnh sửa</button>
+                        </c:if>
+                        <c:if test="${empty model.id}">
+                            <input type="text" hidden="" name="action" value="addproject">
+                            <button type="submit" style="width: fit-content;">thêm</button>
+                        </c:if>
                     </div>
-                </div>
-            </div>
-            <div class="row g-3 align-items-center teacher-edit">
-                <div class="form-group" style="text-align: center;">
-                    <label class="col-sm-3 control-label no-padding-right">status</label>
-                    <div class="col-sm-9" style="margin: auto;">
-                        <input  required="" type="text" class="form-control"  name="status" value="${status}"/>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="row g-3 align-items-center teacher-edit">
-                <c:if test="${not empty model.id}">
-                    <input type="text" hidden="" name="action" value="editTypeOfTopic">
-                    <button type="submit" style="width: fit-content;">chỉnh sửa</button>
-                </c:if>
-                <c:if test="${empty model.id}">
-                    <input type="text" hidden="" name="action" value="addproject">
-                    <button type="submit" style="width: fit-content;">thêm</button>
-                </c:if>
+                </form>
             </div>
         </div>
-
-    </form>
+    </div>
 </section>
 <!-- Footer-->
 
