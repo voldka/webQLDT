@@ -48,7 +48,12 @@ public class TopicSERVICE {
 
             TypeOfTopic typeOfTopic = new TypeOfTopic();
             typeOfTopic.setId(TypeOfTopicId);
-
+            List<Topic> list = findAllTopicOfType(TypeOfTopicId);
+            if(list != null){
+                for(Topic item : list){
+                    deleteTopic(item.getId());
+                }
+            }
             session.delete(typeOfTopic);
             session.getTransaction().commit();
             flag=true;
