@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <title>Trang giảng viên </title>
+    <title>Trang sinh viên </title>
     <!-- Favicon-->
     <!-- <link rel="icon" type="image/x-icon" href="<c:url value="../user/homePage/assets/favicon.ico"/>"/> -->
     <!-- Bootstrap icons-->
@@ -22,7 +22,7 @@
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             <div class="section-header">
                 <h4>
-                    Thông tin của giảng viên
+                    Thông tin của sinh viên
                 </h4>
             </div>
             <div class="section-table">
@@ -32,7 +32,6 @@
                         <thead>
                         </thead>
                         <tbody>
-
                         <tr>
                             <td>Họ và tên:</td>
                             <td><input type="text" class="form-control" name="fullname"

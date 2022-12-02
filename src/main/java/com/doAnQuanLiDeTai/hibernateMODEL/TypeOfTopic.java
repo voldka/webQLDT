@@ -13,8 +13,8 @@ public class TypeOfTopic implements Serializable {
     private long id;
     private String name;
 
-    @OneToMany(mappedBy = "type",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    private Set<Topic> topics;
+//    @OneToMany(mappedBy = "type",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+//    private Set<Topic> topics;
     private Timestamp createddate;
     private Timestamp modifieddate;
     private String createdby;
@@ -68,11 +68,11 @@ public class TypeOfTopic implements Serializable {
         this.modifiedby = modifiedby;
     }
 
-    public Set<Topic> getTopics() {
-        return topics;
-    }
-
-    public void setTopics(Set<Topic> topics) {
-        this.topics = topics;
-    }
+//    public Set<Topic> getTopics() {
+//        return topics;
+//    }
+//
+//    public void setTopics(Set<Topic> topics) {
+//        this.topics = topics;
+//    }
 }

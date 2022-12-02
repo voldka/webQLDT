@@ -34,22 +34,31 @@
                         <tr>
                             <td>name topic</td>
                             <td>
-                                <input required="" type="text" class="form-control" name="name" value="${name}"/>
+                                <input required="" type="text" class="form-control" name="name" value="${model.nameTopic}"/>
                             </td>
                         </tr>
                         <tr>
                             <td>status</td>
                             <td>
-                                <input required="" type="text" class="form-control" name="status" value="${status}"/>
+                                <input required="" type="text" class="form-control" name="status" value="${model.status}"/>
 
                             </td>
                         </tr>
                         <tr>
                             <td>target</td>
                             <td>
-                                <input required="" type="text" class="form-control" name="target" value="${target}"/>
+                                <input required="" type="text" class="form-control" name="target" value="${model.target}"/>
                             </td>
                         </tr>
+                        <c:if test="${not empty model.id}">
+                            <tr>
+                                <td>point</td>
+                                <td>
+                                    <input required="" type="text" class="form-control" name="point" value="${model.rate}"/>
+                                </td>
+                            </tr>
+                            <input type="hidden" name="id" value="${id}">
+                        </c:if>
                         </tbody>
                         <tfoot>
 
@@ -57,7 +66,7 @@
                     </table>
                     <div class="row g-3 align-items-center teacher-edit">
                         <c:if test="${not empty model.id}">
-                            <input type="text" hidden="" name="action" value="editTypeOfTopic">
+                            <input type="text" hidden="" name="action" value="editproject">
                             <button type="submit" style="width: fit-content;">chỉnh sửa</button>
                         </c:if>
                         <c:if test="${empty model.id}">

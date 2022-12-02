@@ -39,7 +39,7 @@ public class EditTypeOfTopicControler extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User model = (User) SessionUtil.getInstance().getValue(request, "USERMODEL");
         String action = request.getParameter("action");
-        if (action != null && action.equals("editTypeOfTopic")) {
+        if (action != null && action.equals("deleteTypeOfTopic")) {
             long id = Long.parseLong(request.getParameter("id"));
             TopicSERVICE.deleteTopic(id);
             response.sendRedirect(request.getContextPath() + "/teacher-list-projects");
@@ -47,6 +47,11 @@ public class EditTypeOfTopicControler extends HttpServlet {
             if (action != null && action.equals("addTypeOfTopic")) {
                 String name = FormUtil.parseStringUTF8(request.getParameter("name"));
                 TopicSERVICE.addNewTypeOfTopic(name, model);
+                response.sendRedirect(request.getContextPath() + "/teacher-list-type-of-topic");
+            } else if (action !=null && action.equals("editTypeOfTopic")) {
+                long id = Long.parseLong(request.getParameter("id"));
+                String name = request.getParameter("name");
+                TopicSERVICE.editTypeOfTopic(name,id);
                 response.sendRedirect(request.getContextPath() + "/teacher-list-type-of-topic");
             }
         }

@@ -27,7 +27,7 @@
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             <div class="section-header">
                 <h4>
-                    Thông tin của giảng viên
+                    Thông tin của sinh viên
                 </h4>
             </div>
             <div class="section-table">
@@ -65,6 +65,19 @@
                             <td>SĐT:</td>
                             <td>${model.numberphone}</td>
                         </tr>
+                        <c:if test="${not empty model.topicRegis.id}">
+                            <tr class="thongtingv">
+                                <td>đề tài đã đăng kí:</td>
+                                <td>${nameTopic}
+                                    <form action="<c:url value="/student-thongtinsv"/>" method="post" style="display: contents">
+                                        <span>
+                                        <input type="text" hidden="" name="action" value="deleteRegis">
+                                        <button type="submit">hủy đăng kí</button>
+                                    </span>
+                                    </form>
+                                </td>
+                            </tr>
+                        </c:if>
                     </c:if>
                     <c:if test="${empty model.code}">
                         <tr>
@@ -95,6 +108,19 @@
                             <td>SĐT:</td>
                             <td></td>
                         </tr>
+                        <c:if test="${not empty model.topicRegis.id}">
+                            <tr class="thongtingv">
+                                <td>đề tài đã đăng kí:</td>
+                                <td>${nameTopic}
+                                    <form action="<c:url value="/student-thongtinsv"/>" method="post" style="display: contents">
+                                        <span>
+                                        <input type="text" hidden="" name="action" value="deleteRegis">
+                                        <button type="submit">hủy đăng kí</button>
+                                    </span>
+                                    </form>
+                                </td>
+                            </tr>
+                        </c:if>
                     </c:if>
 
                     </tbody>

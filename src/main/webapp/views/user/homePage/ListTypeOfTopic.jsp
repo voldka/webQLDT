@@ -42,7 +42,7 @@
                                     <tr class=" listProject_section-table--hover">
                                         <td>${index+1}</td>
                                         <td>
-                                            <a href="<c:url value="/list-projects"/>">${item.name}</a>
+                                            <a href="<c:url value="/list-projects?id=${item.id}"/>">${item.name}</a>
                                         </td>
                                     </tr>
                                 </c:forEach>

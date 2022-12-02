@@ -1,6 +1,7 @@
 package com.doAnQuanLiDeTai.controller.admin.teacher;
 
 import com.doAnQuanLiDeTai.hibernateMODEL.Topic;
+import com.doAnQuanLiDeTai.hibernateMODEL.TypeOfTopic;
 import com.doAnQuanLiDeTai.hibernateMODEL.User;
 import com.doAnQuanLiDeTai.hibernateService.TopicSERVICE;
 import com.doAnQuanLiDeTai.model.UserModel;
@@ -33,6 +34,8 @@ public class ListProjectsTeacherController extends HttpServlet {
         } else {
             long typeId = Long.parseLong(request.getParameter("id"));
             List<Topic> model = TopicSERVICE.findAllTopicOfType(typeId);
+            TypeOfTopic type = TopicSERVICE.findTypeOfTopicById(typeId);
+            request.setAttribute("type",type);
             request.setAttribute("model", model);
             request.setAttribute("typeId", typeId);
             int countModel;
@@ -53,8 +56,11 @@ public class ListProjectsTeacherController extends HttpServlet {
         long typeId = Long.parseLong(request.getParameter("typeId"));
         if (action != null && action.equals("delelteTopic")) {
             long id = Long.parseLong(request.getParameter("id"));
-            TopicSERVICE.deleteTopic(id);
-            response.sendRedirect(request.getContextPath() + "/teacher-list-projects?id=" + typeId);
+            if(TopicSERVICE.deleteTopic(id)){
+                response.sendRedirect(request.getContextPath() + "/teacher-list-projects?id=" + typeId);
+            }else {
+                response.sendRedirect(request.getContextPath() + "/teacher-list-projects?id=" + typeId +"&&message=can_not_delete");
+            }
         } else {
             if (action != null && action.equals("addTopic")) {
                 String name = FormUtil.parseStringUTF8(request.getParameter("name"));

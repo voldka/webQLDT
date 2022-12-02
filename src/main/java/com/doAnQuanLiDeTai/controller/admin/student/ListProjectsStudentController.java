@@ -1,6 +1,7 @@
 package com.doAnQuanLiDeTai.controller.admin.student;
 
 import com.doAnQuanLiDeTai.hibernateMODEL.Topic;
+import com.doAnQuanLiDeTai.hibernateMODEL.TypeOfTopic;
 import com.doAnQuanLiDeTai.hibernateService.TopicSERVICE;
 import com.doAnQuanLiDeTai.service.IUserService;
 import com.doAnQuanLiDeTai.utils.SessionUtil;
@@ -28,6 +29,8 @@ public class ListProjectsStudentController extends HttpServlet {
         } else {
             long typeId = Long.parseLong(request.getParameter("id"));
             List<Topic> model = TopicSERVICE.findAllTopicOfType(typeId);
+            TypeOfTopic type = TopicSERVICE.findTypeOfTopicById(typeId);
+            request.setAttribute("type",type);
             request.setAttribute("model",model);
             request.setAttribute("typeId",typeId);
             int countModel;

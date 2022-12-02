@@ -19,6 +19,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 public class TopicSERVICE {
     public static List<TypeOfTopic> findAllTypeOfTopic() {
@@ -39,7 +40,8 @@ public class TopicSERVICE {
             }
         }
     }
-    public static void deleteTypeOfTopic(long TypeOfTopicId){
+    public static boolean deleteTypeOfTopic(long TypeOfTopicId){
+        boolean flag = false;
         SessionFactory factory = HibernateUtil.getSessionFactory();
         try (Session session = factory.openSession()) {
             session.getTransaction().begin();
@@ -49,6 +51,12 @@ public class TopicSERVICE {
 
             session.delete(typeOfTopic);
             session.getTransaction().commit();
+            flag=true;
+            return flag;
+        }finally {
+            if(flag==false){
+                return flag;
+            }
         }
     }
 
@@ -64,6 +72,17 @@ public class TopicSERVICE {
             session.save(typeOfTopic);
             session.getTransaction().commit();
         }
+    }
+    public static void editTypeOfTopic (String name,Long id){
+        SessionFactory factory = HibernateUtil.getSessionFactory();
+        try(Session session= factory.openSession()) {
+            session.getTransaction().begin();
+            TypeOfTopic typeOfTopic = findTypeOfTopicById(id);
+            typeOfTopic.setName(name);
+            session.update(typeOfTopic);
+            session.getTransaction().commit();
+        }
+
     }
     public static void editTypeOfTopic(String name,User user,long id){
         SessionFactory factory =HibernateUtil.getSessionFactory();
@@ -132,16 +151,41 @@ public class TopicSERVICE {
             session.getTransaction().commit();
         }
     }
-    public static void deleteTopic(long topicId){
+    public static void editTopic(long id, String name, String target, String status, int rate){
+        SessionFactory factory = HibernateUtil.getSessionFactory();
+        try(Session session = factory.openSession()){
+            session.getTransaction().begin();
+
+            Topic topic = new Topic();
+            topic = findTopicById(id);
+            topic.setNameTopic(name);
+            topic.setRate(rate);
+            topic.setStatus(status);
+            topic.setTarget(target);
+            session.update(topic);
+            session.getTransaction().commit();
+        }
+    }
+    public static boolean deleteTopic(long topicId){
+        boolean flag = false;
         SessionFactory factory = HibernateUtil.getSessionFactory();
         try (Session session = factory.openSession()) {
             session.getTransaction().begin();
-
+            List<User> list = findAllRegisterTopic(topicId);
+            for (User item : list) {
+               unsubscribe(item);
+            }
             Topic topic = new Topic();
             topic.setId(topicId);
 
             session.delete(topic);
             session.getTransaction().commit();
+            flag = true;
+            return flag;
+        }finally {
+            if(flag==false){
+                return flag;
+            }
         }
     }
     public static List<Topic> findAllTopicOfType(long typeId){
@@ -210,6 +254,32 @@ public class TopicSERVICE {
         }
         else{
             return 3;
+        }
+    }
+    public static void unsubscribe(User user){
+        SessionFactory factory = HibernateUtil.getSessionFactory();
+        try (Session session = factory.openSession()){
+            session.getTransaction().begin();
+            Topic topic = findTopicById(user.getTopicRegis().getId());
+            int number = topic.getNumber();
+            user.setTopicRegis(null);
+
+            topic.setNumber( number-1);
+
+            session.saveOrUpdate(topic);
+            session.saveOrUpdate(user);
+            session.getTransaction().commit();
+
+        }
+    }
+    public static List<User> findAllRegisterTopic(long id){
+        List result = new ArrayList<User>();
+        SessionFactory factory = HibernateUtil.getSessionFactory();
+        try(Session session = factory.openSession()){
+            Query q = session.createQuery("from User A " + "where A.topicRegis.id=:loc");
+            q.setParameter("loc",id);
+            result = q.getResultList();
+            return result;
         }
     }
 }

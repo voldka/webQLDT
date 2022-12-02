@@ -59,13 +59,27 @@ public class ListTypeOfTopicTeacherController extends HttpServlet {
             TopicSERVICE.addNewTypeOfTopic(name, model);
             response.sendRedirect(request.getContextPath() + "/teacher-list-type-of-topic");
         } else {
-            if (action != null && action.equals("deleteTypeOfTopic")) {
+            if (action != null && action.equals("editTypeOfTopic")) {
+                String name = FormUtil.parseStringUTF8(request.getParameter("name"));
                 long id = Long.parseLong(request.getParameter("id"));
-                TopicSERVICE.deleteTypeOfTopic(id);
+                TopicSERVICE.editTypeOfTopic(name, id);
                 response.sendRedirect(request.getContextPath() + "/teacher-list-type-of-topic");
+            } else if (action != null && action.equals("edit")) {
+                long id = Long.parseLong(request.getParameter("id"));
+                response.sendRedirect(request.getContextPath() + "/teacher-edit-TypeOfTopic?id=" + id + "&&action=edit");
             } else {
-                response.sendRedirect(request.getContextPath() + "/teacher-list-type-of-topic?message=can not delete");
+                if (action != null && action.equals("deleteTypeOfTopic")) {
+                    long id = Long.parseLong(request.getParameter("id"));
+                    if(TopicSERVICE.deleteTypeOfTopic(id)){
+                        response.sendRedirect(request.getContextPath() + "/teacher-list-type-of-topic");
+                    }else {
+                        response.sendRedirect(request.getContextPath() + "/teacher-list-type-of-topic?message=can_not_delete");
+                    }
+                } else {
+                    response.sendRedirect(request.getContextPath() + "/teacher-list-type-of-topic?message=can_not_delete");
+                }
             }
+
         }
     }
 }

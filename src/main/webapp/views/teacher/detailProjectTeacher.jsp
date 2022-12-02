@@ -21,7 +21,7 @@
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             <div class="section-header">
                 <h4>
-                    Tên loại đề tài vừa chọn
+                    ${type.name}
                 </h4>
             </div>
             <div class="section-table">
@@ -41,6 +41,16 @@
                         <td>SL sinh viên</td>
                         <td>${model.number}/3</td>
                     </tr>
+                    <c:if test="${not empty modelResiter}">
+                        <tr class="listProject_section-table--hoverDarkgrey" style="background-color:#DFF0F5">
+                            <td>Sinh viên thực hiện</td>
+                            <td>
+                                <c:forEach var="item" items="${modelResiter}">
+                                    <p>User name: ${item.username}--fullname: ${item.fullname}</p>
+                                </c:forEach>
+                            </td>
+                        </tr>
+                    </c:if>
                     <tr class="listProject_section-table--hoverDarkgrey">
                         <td>Loại đề tài</td>
                         <td>${model.type.name}</td>

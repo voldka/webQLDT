@@ -25,14 +25,14 @@
 <!-- Section-->
 <section class="py-5" style="padding-top: 0px!important;">
     <div class="container px-4 px-lg-5 mt-5">
-        <div class="notification-container-add"><a class="nav-link" href="<c:url value="/teacher-edit-projects?typeId=${typeId}"/>">
+        <div class="notification-container-add"><a class="nav-link" href="<c:url value="/teacher-edit-projects?typeId=${typeId}&&action=add"/>">
             <img src="${pageContext.request.contextPath}/views/user/homePage/assets/add.png" width="24" height="24"
                  alt="">
         </a></div>
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             <div class="section-header">
                 <h4>
-                    Tên loại đề tài vừa chọn
+                    ${type.name}
                 </h4>
             </div>
             <div class="section-table">
@@ -54,10 +54,11 @@
                                         <a href="<c:url value="/teacher-detail-project?id=${item.id}&typeId=${typeId}"/>">${item.nameTopic}</a>
                                     </td>
                                     <td style="width: 8%;">
-                                        <form action="<c:url value="/teacher-list-projects"/>" method="post"
+                                        <form action="<c:url value="/teacher-edit-projects"/>" method="get"
                                               style="margin: 4px;">
-                                            <input type="hidden" name="action" value="" class="edit-input">
+                                            <input type="hidden" name="action" value="edit" class="edit-input">
                                             <input type="hidden" name="id" value="${item.id}" class="edit-input-id">
+                                            <input type="hidden" name="typeId" value="${typeId}">
                                             <button class="btn btn-primary btn-sm edit-button" type="submit">
                                                 <i class="fa-solid fa-pen-to-square"></i>
                                             </button>
@@ -65,7 +66,7 @@
                                         <form action="<c:url value="/teacher-list-projects?typeId=${typeId}"/>" method="post"
                                               style="margin: 4px;">
                                             <input type="hidden" name="action" value="delelteTopic"
-                                                   class="delete-input}">
+                                                   class="delete-input">
                                             <input type="hidden" name="id" value="${item.id}"
                                                    class="delete-input-id">
                                             <button class="btn btn-primary btn-sm" id="delete-button" type="submit">

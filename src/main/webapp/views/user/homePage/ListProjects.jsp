@@ -27,7 +27,7 @@
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             <div class="section-header">
                 <h4>
-                    Tên loại đề tài vừa chọn
+                    ${type.name}
                 </h4>
             </div>
             <div class="section-table">
@@ -36,43 +36,24 @@
                     <tr>
                         <th data="true">STT</th>
                         <th>Tên đề tài</th>
-                        <th>GVHD</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr class="listProject_section-table--hover">
-                        <td>1</td>
-                        <td>
-                            <a href="<c:url value="/detail-project"/>"> Web bán hàng sử dụng MERN stack</a>
-                        </td>
-                        <td>Mai Anh Thơ</td>
-                    </tr>
-                    <tr class="listProject_section-table--hover">
-                        <td>2</td>
-                        <td>
-                            <a href="<c:url value="/detail-project"/>"> Web xem phim sử dụng MEAN stack </a>
-                        </td>
-                        <td>Mai Anh Thơ</td>
-                    </tr>
-                    <tr class="listProject_section-table--hover">
-                        <td>3</td>
-                        <td>
-                            <a href="<c:url value="/detail-project"/>"> Web quản lí đề tài sử dụng jsp servlet</a>
-                        </td>
-                        <td>Mai Anh Thơ</td>
-                    </tr>
-                    <tr class="listProject_section-table--hover">
-                        <td>4</td>
-                        <td>
-                            <a href="<c:url value="/detail-project"/>"> web xem phim</a>
-                        </td>
-                        <td>Mai Anh Thơ</td>
-                    </tr>
+                    <c:if test="${countModel>0}">
+                        <c:forEach var="index" begin="0" end="${countModel-1}">
+                            <c:forEach var="item" items="${model}" begin="${index}" end="${index}">
+                                <tr class=" listProject_section-table--hover">
+                                    <td style="width: 10%">${index+1}</td>
+                                    <td>
+                                        <a href="<c:url value="/detail-project?id=${item.id}&&typeId=${type.id}"/>">${item.nameTopic}</a>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                        </c:forEach>
+                    </c:if>
                     </tbody>
                     <tfoot>
-                    <tr>
-                        <td colspan="5"></td>
-                    </tr>
+
                     </tfoot>
                 </table>
             </div>

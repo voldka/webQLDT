@@ -12,9 +12,9 @@
                             src="${pageContext.request.contextPath}/views/user/homePage/assets/house-icon.png"
                             width="24"
                             height="24">Trang chủ</a></li>
-                <li class="nav-item padding"><a class="nav-link" href="#!"><img
-                        src="${pageContext.request.contextPath}/views/user/homePage/assets/online-icon.png" width="24"
-                        height="24">Chúng tôi</a></li>
+                <li class="nav-item padding"><a class="nav-link" href="<c:url value="/teacher-list-type-of-topic"/>"><img
+                        src="${pageContext.request.contextPath}/views/user/homePage/assets/Actions-view-calendar-list-icon.png"
+                        width="24" height="24">Danh sách đề tài</a></li>
                 <li class="nav-item padding "><a class="nav-link" href="#!"><img
                         src="${pageContext.request.contextPath}/views/user/homePage/assets/chart-icon.png" width="24"
                         height="24">Thống
@@ -30,24 +30,12 @@
                         <li>
                             <hr class="dropdown-divider"/>
                         </li>
-                        <li><a class="dropdown-item" href="#!"><img
+                        <li><a class="dropdown-item" href="<c:url value="/student-thongtinsv"/>"><img
                                 src="${pageContext.request.contextPath}/views/user/homePage/assets/Student-3-icon.png"
                                 width="24"
                                 height="24">Thông tin sinh viên</a></li>
-                        <li>
-                            <hr class="dropdown-divider"/>
-                        </li>
-                        <li><a class="dropdown-item" href="<c:url value="/teacher-list-type-of-topic"/>"><img
-                                src="${pageContext.request.contextPath}/views/user/homePage/assets/Actions-view-calendar-list-icon.png"
-                                width="24" height="24">Danh sách đề tài</a></li>
+
                     </ul>
-                </li>
-                <li class="nav-item dropdown padding" style="left: 10px;">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Enter search term..."
-                               aria-label="Enter search term..." aria-describedby="button-search">
-                        <button class="btn btn-primary" id="button-search" type="button" style="z-index: 0">Go!</button>
-                    </div>
                 </li>
             </ul>
             <form class="d-flex" action="#">

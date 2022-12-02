@@ -28,7 +28,7 @@
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             <div class="section-header">
                 <h4>
-                    Tên loại đề tài vừa chọn
+                    ${type.name}
                 </h4>
             </div>
             <div class="section-table">

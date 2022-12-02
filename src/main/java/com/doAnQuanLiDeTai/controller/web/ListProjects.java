@@ -1,6 +1,9 @@
 package com.doAnQuanLiDeTai.controller.web;
 
+import com.doAnQuanLiDeTai.hibernateMODEL.Topic;
+import com.doAnQuanLiDeTai.hibernateMODEL.TypeOfTopic;
 import com.doAnQuanLiDeTai.hibernateMODEL.User;
+import com.doAnQuanLiDeTai.hibernateService.TopicSERVICE;
 import com.doAnQuanLiDeTai.hibernateService.UserSERVICE;
 
 import com.doAnQuanLiDeTai.utils.FormUtil;
@@ -15,12 +18,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 @WebServlet(name = "list-projects", urlPatterns = "/list-projects")
 public class ListProjects extends HttpServlet {
 
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        long id = Long.parseLong(request.getParameter("id"));
+        List<Topic> model =TopicSERVICE.findAllTopicOfType(id);
+        request.setAttribute("model",model);
+        long countModel = model.size();
+        request.setAttribute("countModel",countModel);
+        TypeOfTopic type = TopicSERVICE.findTypeOfTopicById(id);
+        request.setAttribute("type",type);
         RequestDispatcher rd = request.getRequestDispatcher("views/user/homePage/ListProjects.jsp");
         rd.forward(request, response);
     }

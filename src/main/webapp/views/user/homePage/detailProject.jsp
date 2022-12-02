@@ -21,7 +21,7 @@
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             <div class="section-header">
                 <h4>
-                    Tên loại đề tài vừa chọn
+                    ${type.name}
                 </h4>
             </div>
             <div class="section-table">
@@ -30,37 +30,36 @@
                     <tbody>
                     <tr class="listProject_section-table--hoverDarkgrey">
                         <td>Tên đề tài</td>
-                        <td>Tìm hiểu Entity Framework và .NETXây dựng chương trình phân tích và đánh giá hoạt động
-                            đào
-                            tạo sử dụng .NET
+                        <td>${model.nameTopic}
                         </td>
                     </tr>
                     <tr class="listProject_section-table--hoverDarkgrey">
                         <td>Mục tiêu</td>
-                        <td>Tìm hiểu jsp, servlet, mô hình mvc, xml, dao, service, jdbc,...</td>
+                        <td>${model.target}</td>
                     </tr>
                     <tr class="listProject_section-table--hoverDarkgrey">
                         <td>SL sinh viên</td>
-                        <td>3/3</td>
+                        <td>${model.number}/3</td>
                     </tr>
                     <tr class="listProject_section-table--hoverDarkgrey">
                         <td>Loại đề tài</td>
-                        <td>Tiểu luận chuyên ngành</td>
+                        <td>${model.type.name}</td>
                     </tr>
                     <tr class="listProject_section-table--hoverDarkgrey">
                         <td>Trạng thái</td>
-                        <td>Được bảo vệ</td>
+                        <td>${model.status}</td>
                     </tr>
                     <tr class="listProject_section-table--hoverDarkgrey" style="background-color: #f2dede;">
                         <td>GV hướng dẫn</td>
-                        <td>Mai Anh Thơ</td>
+                        <td>${model.createdby}</td>
                     </tr>
                     <tr class="listProject_section-table--hoverDarkgrey" style="background-color:#dff0d8">
                         <td>Điểm đề tài</td>
-                        <td>Chưa có điểm</td>
+                        <td>${model.rate}</td>
                     </tr>
                     <td colspan="2" style="text-align: center;">
                         <form action="<c:url value="/list-projects"/>" method="get">
+                            <input type="hidden" name="id" value="${typeId}">
                             <button id="back" type="submit" class="btn btn-info" style="color: white; "
                                     href="">Quay về
                             </button>

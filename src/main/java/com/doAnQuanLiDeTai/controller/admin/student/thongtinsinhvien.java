@@ -1,6 +1,8 @@
 package com.doAnQuanLiDeTai.controller.admin.student;
 
+import com.doAnQuanLiDeTai.hibernateMODEL.Topic;
 import com.doAnQuanLiDeTai.hibernateMODEL.User;
+import com.doAnQuanLiDeTai.hibernateService.TopicSERVICE;
 import com.doAnQuanLiDeTai.hibernateService.UserSERVICE;
 import com.doAnQuanLiDeTai.utils.FormUtil;
 import com.doAnQuanLiDeTai.utils.SessionUtil;
@@ -26,6 +28,12 @@ public class thongtinsinhvien extends HttpServlet {
         } else {
             User model = (User) SessionUtil.getInstance().getValue(request, "USERMODEL");
             request.setAttribute("model", model);
+            if(model.getTopicRegis() != null){
+                long id = model.getTopicRegis().getId();
+                Topic modelTopic = TopicSERVICE.findTopicById(id);
+                String nameTopic = modelTopic.getNameTopic();
+                request.setAttribute("nameTopic",nameTopic);
+            }
             RequestDispatcher rd = request.getRequestDispatcher("views/student/thongtinsinhvien.jsp");
             rd.forward(request, response);
         }
@@ -45,7 +53,13 @@ public class thongtinsinhvien extends HttpServlet {
             UserSERVICE.addOrEditProfile(model, fullname, code, birthday, major, bgeducate, locate, numberphone);
             response.sendRedirect(request.getContextPath() + "/student-thongtinsv");
         } else {
-            response.sendRedirect(request.getContextPath() + "/student-home");
+            if(action !=null && action.equals("deleteRegis")){
+                User model = (User) SessionUtil.getInstance().getValue(request, "USERMODEL");
+                TopicSERVICE.unsubscribe(model);
+                response.sendRedirect(request.getContextPath() + "/student-thongtinsv");
+            }else{
+                response.sendRedirect(request.getContextPath() + "/student-home");
+            }
         }
     }
 }

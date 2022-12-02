@@ -1,6 +1,7 @@
 package com.doAnQuanLiDeTai.controller.admin.student;
 
 import com.doAnQuanLiDeTai.hibernateMODEL.Topic;
+import com.doAnQuanLiDeTai.hibernateMODEL.TypeOfTopic;
 import com.doAnQuanLiDeTai.hibernateMODEL.User;
 import com.doAnQuanLiDeTai.hibernateService.TopicSERVICE;
 import com.doAnQuanLiDeTai.hibernateService.UserSERVICE;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 import java.util.ResourceBundle;
 
 @WebServlet(name = "student-detail-project", urlPatterns = "/student-detail-project")
@@ -35,8 +37,12 @@ public class DetailProjectStudentController extends HttpServlet {
             long id = Long.parseLong(request.getParameter("id"));
             long typeId = Long.parseLong(request.getParameter("typeId"));
             Topic model = TopicSERVICE.findTopicById(id);
+            TypeOfTopic type=TopicSERVICE.findTypeOfTopicById(typeId);
+            request.setAttribute("type",type);
             request.setAttribute("model", model);
             request.setAttribute("typeId", typeId);
+            List<User> modelResiter = TopicSERVICE.findAllRegisterTopic(id);
+            request.setAttribute("modelResiter",modelResiter);
             RequestDispatcher rd = request.getRequestDispatcher("views/student/detailProjectStudent.jsp");
             rd.forward(request, response);
         }

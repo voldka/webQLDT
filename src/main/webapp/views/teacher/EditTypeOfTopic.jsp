@@ -19,6 +19,7 @@
                     <h4>
                         <c:if test="${not empty model.id}">
                             chỉnh sửa loại đề tài
+                            <input type="hidden" name="id" value="${model.id}">
                         </c:if>
                         <c:if test="${empty model.id}">
                             thêm loại đề tài
@@ -34,7 +35,7 @@
                                 <td>name type</td>
                                 <td>
                                     <input required="" type="text" class="form-control" id="content" name="name"
-                                           value="${name}"/>
+                                           value="${model.name}"/>
                                 </td>
                             </tr>
                             </tbody>

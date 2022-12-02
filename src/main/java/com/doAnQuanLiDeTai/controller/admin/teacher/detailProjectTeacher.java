@@ -1,6 +1,7 @@
 package com.doAnQuanLiDeTai.controller.admin.teacher;
 
 import com.doAnQuanLiDeTai.hibernateMODEL.Topic;
+import com.doAnQuanLiDeTai.hibernateMODEL.TypeOfTopic;
 import com.doAnQuanLiDeTai.hibernateMODEL.User;
 import com.doAnQuanLiDeTai.hibernateService.TopicSERVICE;
 import com.doAnQuanLiDeTai.hibernateService.UserSERVICE;
@@ -27,8 +28,12 @@ public class detailProjectTeacher extends HttpServlet {
             long id = Long.parseLong(request.getParameter("id"));
             long typeId = Long.parseLong(request.getParameter("typeId"));
             Topic model = TopicSERVICE.findTopicById(id);
+            TypeOfTopic type = TopicSERVICE.findTypeOfTopicById(typeId);
+            request.setAttribute("type",type);
             request.setAttribute("model", model);
             request.setAttribute("typeId",typeId);
+            List<User> modelResiter = TopicSERVICE.findAllRegisterTopic(id);
+            request.setAttribute("modelResiter",modelResiter);
             RequestDispatcher rd = request.getRequestDispatcher("views/teacher/detailProjectTeacher.jsp");
             rd.forward(request, response);
         }

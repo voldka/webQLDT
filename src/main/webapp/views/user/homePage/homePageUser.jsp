@@ -24,11 +24,11 @@
                     <tbody>
                     <c:forEach var="item" items="${model}">
                         <tr>
-                            <a class="table-anchor" href="<c:url value="/notification"/>">
+                            <a class="table-anchor" href="#">
                                 <li class="article-area table-li">
                                     <p>
                                         <span class="btn btn-primary btn-sm">
-                                            ${item.createddate}
+                                                ${item.createddate}
                                         </span>
                                             ${item.title}
                                     </p>

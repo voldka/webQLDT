@@ -28,8 +28,16 @@ public class Topic implements Serializable {
     @JoinColumn(name = "create_userid")
     private User usercreate;
 
-    @OneToMany(mappedBy = "topicRegis",fetch = FetchType.EAGER, cascade= CascadeType.ALL)
-    private Set<User> users;
+//    @OneToMany(mappedBy = "topicRegis",fetch      = FetchType.EAGER)
+//    private Set<User> users;
+//
+//    public Set<User> getUsers() {
+//        return users;
+//    }
+//
+//    public void setUsers(Set<User> users) {
+//        this.users = users;
+//    }
 
     private Timestamp createddate;
     private Timestamp modifieddate;

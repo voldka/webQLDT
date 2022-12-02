@@ -1,6 +1,9 @@
 package com.doAnQuanLiDeTai.controller.web;
 
+import com.doAnQuanLiDeTai.hibernateMODEL.Topic;
+import com.doAnQuanLiDeTai.hibernateMODEL.TypeOfTopic;
 import com.doAnQuanLiDeTai.hibernateMODEL.User;
+import com.doAnQuanLiDeTai.hibernateService.TopicSERVICE;
 import com.doAnQuanLiDeTai.hibernateService.UserSERVICE;
 
 import com.doAnQuanLiDeTai.utils.FormUtil;
@@ -24,7 +27,13 @@ public class detailProject extends HttpServlet {
 
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-
+        long id = Long.parseLong(request.getParameter("id"));
+        long typeId = Long.parseLong(request.getParameter("typeId"));
+        Topic model = TopicSERVICE.findTopicById(id);
+        TypeOfTopic type = TopicSERVICE.findTypeOfTopicById(typeId);
+        request.setAttribute("model", model);
+        request.setAttribute("typeId", typeId);
+        request.setAttribute("type", type);
         RequestDispatcher rd = request.getRequestDispatcher("views/user/homePage/detailProject.jsp");
         rd.forward(request, response);
     }
