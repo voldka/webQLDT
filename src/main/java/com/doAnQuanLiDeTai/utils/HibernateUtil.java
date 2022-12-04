@@ -20,9 +20,9 @@ public class HibernateUtil {
 
         pros.put(Environment.DIALECT, "org.hibernate.dialect.MySQL8Dialect");
         pros.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-        pros.put(Environment.URL, "jdbc:mysql://localhost:3306/doanweb");
+        pros.put(Environment.URL, "jdbc:mysql://localhost:3306/web");
         pros.put(Environment.USER, "root");
-        pros.put(Environment.PASS, "tailx0913");
+        pros.put(Environment.PASS, "123456");
         conf.setProperties(pros);
 
         conf.addAnnotatedClass(Role.class);
