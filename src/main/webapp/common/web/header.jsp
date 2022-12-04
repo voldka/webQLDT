@@ -15,6 +15,10 @@
                 <li class="nav-item padding"><a class="nav-link" href="<c:url value="/list-type-of-topic"/>"><img
                         src="${pageContext.request.contextPath}/views/user/homePage/assets/Actions-view-calendar-list-icon.png"
                         width="24" height="24">Danh sách đề tài</a></li>
+                <li class="nav-item padding "><a class="nav-link" href="#!"><img
+                        src="${pageContext.request.contextPath}/views/user/homePage/assets/chart-icon.png" width="24"
+                        height="24">Thống
+                    kê</a></li>
                 <li class="nav-item dropdown padding">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">Thông tin thêm</a>
