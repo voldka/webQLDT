@@ -13,13 +13,13 @@
 
         <!-- thông tin kết nối đến database -->
         <property name="hibernate.connection.url">
-            jdbc:mysql://localhost/doanweb
+            jdbc:mysql://localhost/web
         </property>
         <property name="hibernate.connection.username">
             root
         </property>
         <property name="hibernate.connection.password">
-            tailx0913
+            123456
         </property>
 
         <!-- Danh sách các XML mapping file-->

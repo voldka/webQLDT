@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="webhk1">
+    <output-path>$PROJECT_DIR$/out/artifacts/webhk1</output-path>
+    <root id="archive" name="webhk1.war" />
+  </artifact>
+</component>
