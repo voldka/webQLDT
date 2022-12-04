@@ -12,13 +12,13 @@
         </property>
         <!-- thông tin kết nối đến database -->
         <property name="hibernate.connection.url">
-            jdbc:mysql://localhost/web
+            jdbc:mysql://remotemysql.com:3306/7mWPwBU4aV
         </property>
         <property name="hibernate.connection.username">
-            root
+            7mWPwBU4aV
         </property>
         <property name="hibernate.connection.password">
-            tailx0913
+            qt0zeGF0vs
         </property>
 
         <!-- Danh sách các XML mapping file-->
