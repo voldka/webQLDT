@@ -15,7 +15,7 @@
                 <li class="nav-item padding"><a class="nav-link" href="<c:url value="/teacher-list-type-of-topic"/>"><img
                         src="${pageContext.request.contextPath}/views/user/homePage/assets/Actions-view-calendar-list-icon.png"
                         width="24" height="24">Danh sách đề tài</a></li>
-                <li class="nav-item padding "><a class="nav-link" href="#!"><img
+                <li class="nav-item padding "><a class="nav-link" href="<c:url value="/teacher-thong-ke"/>"><img
                         src="${pageContext.request.contextPath}/views/user/homePage/assets/chart-icon.png" width="24"
                         height="24">Thống
                     kê</a></li>

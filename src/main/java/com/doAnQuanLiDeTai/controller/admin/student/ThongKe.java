@@ -1,10 +1,8 @@
-package com.doAnQuanLiDeTai.controller.web;
+package com.doAnQuanLiDeTai.controller.admin.student;
 
 import com.doAnQuanLiDeTai.hibernateMODEL.Topic;
 import com.doAnQuanLiDeTai.hibernateMODEL.TypeOfTopic;
-import com.doAnQuanLiDeTai.hibernateMODEL.User;
 import com.doAnQuanLiDeTai.hibernateService.TopicSERVICE;
-import com.doAnQuanLiDeTai.hibernateService.UserSERVICE;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-@WebServlet(name= "thong-ke", urlPatterns = "/thong-ke")
+@WebServlet(name= "student-thong-ke", urlPatterns = "/student-thong-ke")
 public class ThongKe extends HttpServlet {
     ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

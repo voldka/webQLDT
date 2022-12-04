@@ -35,6 +35,8 @@
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
     <script src="${pageContext.request.contextPath}/views/user/homePage/js/scripts.js"></script>
 <%--    <!-- Bootstrap core JS-->--%>
 <%--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>--%>

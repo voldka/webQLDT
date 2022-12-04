@@ -10,7 +10,6 @@
         <property name="hibernate.connection.driver_class">
             com.mysql.cj.jdbc.Driver
         </property>
-
         <!-- thông tin kết nối đến database -->
         <property name="hibernate.connection.url">
             jdbc:mysql://localhost/web
@@ -19,7 +18,7 @@
             root
         </property>
         <property name="hibernate.connection.password">
-            123456
+            tailx0913
         </property>
 
         <!-- Danh sách các XML mapping file-->

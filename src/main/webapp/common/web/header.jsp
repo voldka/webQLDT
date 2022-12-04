@@ -23,21 +23,17 @@
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">Thông tin thêm</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#"><img
+                        <li><a class="dropdown-item" href="<c:url value="/teacher-thongtingv"/>"><img
                                 src="${pageContext.request.contextPath}/views/user/homePage/assets/Teacher-icon.png"
                                 width="24"
                                 height="24">Thông tin giảng viên</a></li>
                         <li>
                             <hr class="dropdown-divider"/>
                         </li>
-                        <li><a class="dropdown-item" href="#!"><img
+                        <li><a class="dropdown-item" href="<c:url value="/student-thongtinsv"/>"><img
                                 src="${pageContext.request.contextPath}/views/user/homePage/assets/Student-3-icon.png"
                                 width="24"
                                 height="24">Thông tin sinh viên</a></li>
-                        <li>
-                            <hr class="dropdown-divider"/>
-                        </li>
-
                     </ul>
                 </li>
             </ul>
