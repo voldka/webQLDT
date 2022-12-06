@@ -75,7 +75,9 @@
         scroll-behavior: smooth;
     }
 }
-
+.card:hover{
+    box-shadow: 1px 1px 25px;
+}
 body {
     margin: 0;
     font-family: var(--bs-body-font-family);

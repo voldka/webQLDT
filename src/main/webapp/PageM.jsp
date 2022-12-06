@@ -376,9 +376,11 @@
                         </div>
                     </div>
                     <!-- Product actiosdasns sss-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="display: flex;justify-content: space-around;">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto"
-                                                    href="<c:url value="/trang-chu"/>">GO!</a></div>
+                                                    href="<c:url value="/trang-chu"/>">web</a></div>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                                    href="https://github.com/voldka/webQLDT">github</a></div>
                     </div>
                 </div>
             </div>
