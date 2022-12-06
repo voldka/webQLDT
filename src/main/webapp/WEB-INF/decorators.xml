@@ -4,9 +4,6 @@
     <excludes>
         <pattern>/api*</pattern>
     </excludes>
-    <excludes>
-        <pattern>/login*</pattern>
-    </excludes>
 
     <!-- apply Sitemesh default template -->
     <decorator name="teacher" page="teacher.jsp">
