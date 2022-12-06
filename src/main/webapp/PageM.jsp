@@ -97,49 +97,51 @@
 <section class="py-5">
     <div class="container px-4 px-lg-5 mt-5">
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-<%--            <div class="col mb-5">--%>
-<%--                <div class="card h-100">--%>
-<%--                    <!-- Product image-->--%>
-<%--                    <img class="card-img-top height-inherit"--%>
-<%--                         src="asset/startbootstrap-shop-homepage-gh-pages/assets/947e3e59443c8062d92d.jpg" alt="..."/>--%>
-<%--                    <!-- Product details-->--%>
-<%--                    <div class="card-body p-4">--%>
-<%--                        <div class="text-center">--%>
-<%--                            <!-- Product name-->--%>
-<%--                            <h5 class="fw-bolder">Lab</h5>--%>
-<%--                            <!-- Product price-->--%>
-<%--                            Web email--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <!-- Product actions-->--%>
-<%--                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">--%>
-<%--                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"--%>
-<%--                                                    href="https://exerciseweek03.herokuapp.com/emailList">GO!</a></div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--            <div class="col mb-5">--%>
-<%--                <div class="card h-100">--%>
-<%--                    <!-- Product image-->--%>
-<%--                    <img class="card-img-top height-inherit"--%>
-<%--                         src="asset/startbootstrap-shop-homepage-gh-pages/assets/Screenshot%202022-09-19%20132129.png"--%>
-<%--                         alt="..."/>--%>
-<%--                    <!-- Product details-->--%>
-<%--                    <div class="card-body p-4">--%>
-<%--                        <div class="text-center">--%>
-<%--                            <!-- Product name-->--%>
-<%--                            <h5 class="fw-bolder">Lab</h5>--%>
-<%--                            <!-- Product price-->--%>
-<%--                            Web Murach--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <!-- Product actions sss-->--%>
-<%--                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">--%>
-<%--                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"--%>
-<%--                                                    href="https://leminhtai20149058.herokuapp.com/">GO!</a></div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top height-inherit"
+                         src="asset/startbootstrap-shop-homepage-gh-pages/assets/947e3e59443c8062d92d.jpg" alt="..."/>
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Lab</h5>
+                            <!-- Product price-->
+                            ch3 Web email
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="display: flex;justify-content: space-around;">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                                    href="https://ch3ex1g2.herokuapp.com/">GO!</a></div>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                                    href="https://github.com/voldka/ch3">github</a></div> </div>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top height-inherit"
+                         src="asset/startbootstrap-shop-homepage-gh-pages/assets/Screenshot%202022-09-19%20132129.png"
+                         alt="..."/>
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">Lab</h5>
+                            <!-- Product price-->
+                            ch4 Web Murach
+                        </div>
+                    </div>
+                    <!-- Product actions sss-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="display: flex;justify-content: space-around;">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                                    href="https://ch4.herokuapp.com/">GO!</a></div>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                                    href="https://github.com/voldka/ch4">github</a></div> </div>
+                </div>
+            </div>
             <div class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->
@@ -156,10 +158,11 @@
                         </div>
                     </div>
                     <!-- Product actions sss-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="display: flex;justify-content: space-around;">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto"
                                                     href="https://ch5ex1.herokuapp.com/">GO!</a></div>
-                    </div>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                                    href="https://github.com/voldka/ch5ex1-lab-ute">github</a></div> </div>
                 </div>
             </div>
             <div class="col mb-5">
@@ -178,10 +181,11 @@
                         </div>
                     </div>
                     <!-- Product actions sss-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="display: flex;justify-content: space-around;">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto"
                                                     href="https://ch5ex2.herokuapp.com/">GO!</a></div>
-                    </div>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                                    href="https://github.com/voldka/ch5ex2ute">github</a></div> </div>
                 </div>
             </div>
             <div class="col mb-5">
@@ -200,10 +204,11 @@
                         </div>
                     </div>
                     <!-- Product actions sss-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="display: flex;justify-content: space-around;">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto"
                                                     href="https://ch6ex1g2.herokuapp.com/">GO!</a></div>
-                    </div>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                                    href="https://github.com/voldka/ch6ex1">github</a></div> </div>
                 </div>
             </div>
             <div class="col mb-5">
@@ -222,10 +227,11 @@
                         </div>
                     </div>
                     <!-- Product actiosdasns sss-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="display: flex;justify-content: space-around;">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto"
                                                     href="https://ch6ex2g2.herokuapp.com/">GO!</a></div>
-                    </div>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                                    href="https://github.com/voldka/ch6ex2">github</a></div>  </div>
                 </div>
             </div>
             <div class="col mb-5">
@@ -244,10 +250,11 @@
                         </div>
                     </div>
                     <!-- Product actiosdasns sss-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="display: flex;justify-content: space-around;">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto"
                                                     href="https://ch7ex1g2.herokuapp.com/">GO!</a></div>
-                    </div>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                                    href="https://github.com/voldka/ch7ex1">github</a></div>  </div>
                 </div>
             </div>
             <div class="col mb-5">
@@ -266,10 +273,11 @@
                         </div>
                     </div>
                     <!-- Product actiosdasns sss-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="display: flex;justify-content: space-around;">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto"
                                                     href="https://ch7ex2g2.herokuapp.com/">GO!</a></div>
-                    </div>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                                    href="https://github.com/voldka/ch7ex2">github</a></div>   </div>
                 </div>
             </div>
             <div class="col mb-5">
@@ -288,10 +296,11 @@
                         </div>
                     </div>
                     <!-- Product actiosdasns sss-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="display: flex;justify-content: space-around;">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto"
                                                     href="https://ch7ex3g2.herokuapp.com/">GO!</a></div>
-                    </div>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                                    href="https://github.com/voldka/ch7ex3">github</a></div>  </div>
                 </div>
             </div>
             <div class="col mb-5">
@@ -310,10 +319,11 @@
                         </div>
                     </div>
                     <!-- Product actiosdasns sss-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="display: flex;justify-content: space-around;">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto"
                                                     href="https://ch8ex1g2.herokuapp.com/">GO!</a></div>
-                    </div>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                                    href="https://github.com/voldka/ch8ex1">github</a></div> </div>
                 </div>
             </div>
             <div class="col mb-5">
@@ -332,10 +342,11 @@
                         </div>
                     </div>
                     <!-- Product actiosdasns sss-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="display: flex;justify-content: space-around;">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto"
                                                     href="https://ch9ex1g2.herokuapp.com/">GO!</a></div>
-                    </div>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                                    href="https://github.com/voldka/ch9ex1">github</a></div>        </div>
                 </div>
             </div>
             <div class="col mb-5">
@@ -354,9 +365,11 @@
                         </div>
                     </div>
                     <!-- Product actiosdasns sss-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent" style="display: flex;justify-content: space-around;">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto"
                                                     href="https://ch9ex2g2.herokuapp.com/">GO!</a></div>
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                                    href="https://github.com/voldka/ch9ex2">github</a></div>
                     </div>
                 </div>
             </div>
