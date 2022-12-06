@@ -1,21 +1,16 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="doAnWebQLDT:war exploded">
-    <output-path>$PROJECT_DIR$/target/new-jdbc-12-month-2018-1.0</output-path>
-    <properties id="maven-jee-properties">
-      <options>
-        <exploded>true</exploded>
-        <module>doAnWebQLDT</module>
-        <packaging>war</packaging>
-      </options>
-    </properties>
+    <output-path>$PROJECT_DIR$/out/artifacts/doAnWebQLDT_war_exploded</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="doAnWebQLDT" />
+          <element id="library" level="application" name="bootstrap-icons" />
+          <element id="library" level="application" name="bootstrap" />
+          <element id="library" level="application" name="jquery" />
+          <element id="library" level="application" name="jquery-1.8.2" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: javax.servlet:jsp-api:2.0" />
-          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.4" />
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
           <element id="library" level="project" name="Maven: opensymphony:sitemesh:2.4.2" />
           <element id="library" level="project" name="Maven: com.sun.mail:javax.mail:1.6.2" />
@@ -52,10 +47,8 @@
           <element id="library" level="project" name="Maven: com.sun.xml.fastinfoset:FastInfoset:1.2.15" />
         </element>
       </element>
-      <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/new-jdbc-12-month-2018-1.0/META-INF/MANIFEST.MF" />
-      </element>
       <element id="javaee-facet-resources" facet="doAnWebQLDT/web/Web" />
+      <element id="javaee-facet-resources" facet="doAnWebQLDT/javaeeApplication/javaEEApplication" />
     </root>
   </artifact>
 </component>
