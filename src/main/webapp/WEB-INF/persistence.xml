@@ -10,15 +10,16 @@
         <property name="hibernate.connection.driver_class">
             com.mysql.cj.jdbc.Driver
         </property>
+
         <!-- thông tin kết nối đến database -->
         <property name="hibernate.connection.url">
-            jdbc:mysql://remotemysql.com:3306/7mWPwBU4aV
+            jdbc:mysql://remotemysql.com:3306/xYzAsjsbvM
         </property>
         <property name="hibernate.connection.username">
-            7mWPwBU4aV
+            xYzAsjsbvM
         </property>
         <property name="hibernate.connection.password">
-            qt0zeGF0vs
+            C7XDlXYnDA
         </property>
 
         <!-- Danh sách các XML mapping file-->
